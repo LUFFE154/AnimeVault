@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 async function scrapeAnime(query) {
-  const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=5`;
+  const url = `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=15`;
 
   try {
     const response = await axios.get(url);
