@@ -1,15 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-console.log('📦 index.js (rotas) carregado');
+console.log('index.js (rotas) carregado');
 
 try {
   const recommendRoutes = require('./recommend');
-  console.log('recommend.js importado:', typeof recommendRoutes);
   router.use('/recommend', recommendRoutes);
   console.log('Rota /recommend montada');
+
+  const scrapRoutes = require('./scrap');
+  router.use('/scrap', scrapRoutes);
+  console.log('Rota /scrap montada');
 } catch (err) {
-  console.error('Erro ao carregar recommend.js:', err);
+  console.error('Erro ao carregar rotas:', err);
 }
 
 module.exports = router;
