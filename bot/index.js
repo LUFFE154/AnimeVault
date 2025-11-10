@@ -43,4 +43,4 @@ client.on('messageCreate', message => {
   }
 });
 
-client.login('REMOVED');
+client.login('TOKEN');
