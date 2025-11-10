@@ -42,4 +42,3 @@ client.on('messageCreate', message => {
     message.reply('Ocorreu um erro ao executar esse comando.');
   }
 });
-
