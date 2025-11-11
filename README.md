@@ -66,6 +66,7 @@ cd animevault/
 **Server will run at:**
 **👉 http://localhost:3000/api**
 
+---
 
 ## 🧩 API Routes
 | Route                      | Method | Description                         |
@@ -83,6 +84,8 @@ cd animevault/
 | `!help`         | Display available bot commands              |
 Example: !recommend genre:romance min_score:8 min_episodes:12
 
+---
+
 ## ⚡ Advanced Features (Work in Progress)
 
 🔸 Request caching to prevent rate limits
@@ -94,6 +97,8 @@ Example: !recommend genre:romance min_score:8 min_episodes:12
 🔸 Deployment on Vercel/Railway
 
 🔸 Interactive API docs (Swagger)
+
+---
 
 ### 🪪 License
 
