@@ -56,20 +56,16 @@ src/
 ### 1️ Clone the repository
 
 **git clone https://github.com/LUFFE154/animevault.git**
-cd animevault-api
+cd animevault/
 
 ### 2️⃣ Install dependencies
 **npm install**
 
-### 3️⃣ Create your .env file
-PORT=3000
-
-DISCORD_TOKEN=your_discord_token_here
-
-### 4️⃣ Start the server
+### 3️⃣ Start the server
 **node src/server.js**
 **Server will run at:**
 **👉 http://localhost:3000/api**
+
 
 ## 🧩 API Routes
 | Route                      | Method | Description                         |
@@ -77,6 +73,7 @@ DISCORD_TOKEN=your_discord_token_here
 | `/api/recommend`           | GET    | Returns a list of recommended anime |
 | `/api/search?query={name}` | GET    | Search for an anime by name         |
 | `/api/random`              | GET    | Returns a random anime              |
+| `/api/scrap/{anime_name}`  | GET    | Returns requested anime             |
 
 ## 🤖 Discord Bot Commands:
 | Command         | Description                                 |
