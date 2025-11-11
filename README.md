@@ -19,22 +19,23 @@ With AnimeVault, you can:
 ---
 
 ##  Project Structure
+
+<pre>
 src/
+├── server.js                         **Express server entry**
 ├── controllers/
-│ ├── recommendController.js # Main logic for recommendations
-│ ├── searchController.js # Anime search
-│ └── randomController.js # Random anime endpoint
-│
+│   ├── randomController.js           **Random anime endpoint**
+│   ├── recommendController.js        **Main logic for recommendations**
+│   └── searchController.js           **Anime search**
 ├── routes/
-│ ├── index.js # Route entry point
-│ ├── recommend.js # /api/recommend
-│ ├── search.js # /api/search
-│ └── random.js # /api/random
-│
+│   ├── index.js                      **Route entry point**
+│   ├── random.js                     **/api/random**
+│   ├── recommend.js                  **/api/recommend**
+│   └── search.js                     **/api/search**
 ├── utils/
-│ └── scraper.js # Custom scraping helpers
-│
-└── server.js # Express server entry
+    └── scraper.js                    **Custom scraping helpers**
+
+</pre>
 
 ---
 
@@ -54,29 +55,30 @@ src/
 
 ### 1️ Clone the repository
 
-**git clone https://github.com/yourusername/animevault-api.git**
-**cd animevault-api**
+**git clone https://github.com/LUFFE154/animevault.git**
+cd animevault-api
 
 ### 2️⃣ Install dependencies
 **npm install**
 
 ### 3️⃣ Create your .env file
-*PORT=3000*
-*DISCORD_TOKEN=your_discord_token_here*
+PORT=3000
+
+DISCORD_TOKEN=your_discord_token_here
 
 ### 4️⃣ Start the server
 **node src/server.js**
 **Server will run at:**
 **👉 http://localhost:3000/api**
 
-##🧩 API Routes
+## 🧩 API Routes
 | Route                      | Method | Description                         |
 | -------------------------- | ------ | ----------------------------------- |
 | `/api/recommend`           | GET    | Returns a list of recommended anime |
 | `/api/search?query={name}` | GET    | Search for an anime by name         |
 | `/api/random`              | GET    | Returns a random anime              |
 
-##🤖 Discord Bot Commands:
+## 🤖 Discord Bot Commands:
 | Command         | Description                                 |
 | --------------- | ------------------------------------------- |
 | `!anime "name"` | Search and display full anime details       |
@@ -84,12 +86,16 @@ src/
 | `!help`         | Display available bot commands              |
 Example: !recommend genre:romance min_score:8 min_episodes:12
 
-##⚡ Advanced Features (Work in Progress)
+## ⚡ Advanced Features (Work in Progress)
 
 🔸 Request caching to prevent rate limits
+
 🔸 Search history and user context
+
 🔸 Favorites system and profiles
+
 🔸 Deployment on Vercel/Railway
+
 🔸 Interactive API docs (Swagger)
 
 
