@@ -95,6 +95,8 @@ Example: !recommend genre:romance min_score:8 min_episodes:12
 
 🔸 Interactive API docs (Swagger)
 
+### 🪪 License
 
+**This project is licensed under the MIT License — feel free to use, modify, and learn from it.**
 
 
