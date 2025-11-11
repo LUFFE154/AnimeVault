@@ -57,14 +57,14 @@ src/
 git clone https://github.com/yourusername/animevault-api.git
 cd animevault-api
 
-###2️⃣ Install dependencies
+### 2️⃣ Install dependencies
 npm install
 
-###3️⃣ Create your .env file
+### 3️⃣ Create your .env file
 PORT=3000
 DISCORD_TOKEN=your_discord_token_here
 
-###4️⃣ Start the server
+### 4️⃣ Start the server
 node src/server.js
 Server will run at:
 👉 http://localhost:3000/api
