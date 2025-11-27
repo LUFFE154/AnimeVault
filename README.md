@@ -53,18 +53,23 @@ src/
 
 ##  Getting Started
 
-### 1️ Clone the repository
+### 1. Clone the repository
+<pre>
+cd Downloads
+git clone https://github.com/LUFFE154/animevault.git
+</pre>
 
-**git clone https://github.com/LUFFE154/animevault.git**
-cd animevault/
+### 2. Install dependencies
+<pre>npm install</pre>
 
-### 2️⃣ Install dependencies
-**npm install**
+### 3. Start the server
+<pre>
+node src/server.js
+Server will run at:
+</pre>
 
-### 3️⃣ Start the server
-**node src/server.js**
-**Server will run at:**
-**👉 http://localhost:3000/api**
+### 4. Server URL
+<pre>http://localhost:3000/api</pre>
 
 ---
 
