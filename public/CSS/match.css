@@ -1,0 +1,192 @@
+
+body{
+    
+    background: var(--lm-bg-clr-1);
+}
+
+.match-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+.match-container .header{
+    background: var(--lm-highlight-clr);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    padding: 1em 1em 2em 1em;
+
+    border-radius: 0 0 var(--border-radius-alt-3) var(--border-radius-alt-3);
+    box-shadow: 0px 5px 5px var(--lm-shadow-alt);
+}
+.match-container .header span{
+    justify-content: space-between;
+}
+
+.match-container .header svg{
+    width: 35px;
+}
+.match-container .header svg:hover{
+    color: var(--lm-text-clr);
+    cursor: pointer;
+}
+.match-container .header h1{
+    text-align: center;
+    font-family: var(--font-3);
+    font-weight: normal;
+}
+.match-container .header,
+.match-container .header svg{
+    color: var(--lm-text-clr-alt);
+}
+
+.match-container .header .default-link-button{
+    border-color: var(--lm-lighter-clr);
+    color: var(--lm-text-clr-alt);
+
+    width: 300px;
+}
+.match-container .header .default-link-button:hover{
+    border-color: var(--lm-lighter-clr);
+    color: var(--lm-highlight-clr);
+    background-color: var(--lm-lighter-clr);
+
+    width: 300px;
+}
+
+.match-container .body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin: 1em;
+}
+
+.team{
+    width: fit-content;
+    height: fit-content;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+
+    transition: var(--transition-time);
+}
+
+.team:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+
+}
+
+.team .picture-frame{
+    width: 350px;
+    height: 500px;
+    border-radius: var(--border-radius);
+
+    box-shadow: 0px 0px 10px var(--lm-shadow);
+
+    border: 2px solid transparent;
+}
+
+.team.team1 .picture-frame{
+    background: url("../images/container1.png"), url("../images/kaguya-sama.jpg");
+    background-size: contain;
+    border-color: var(--team1-clr);
+}
+
+.team.team2 .picture-frame{
+    background: url("../images/container2.png"), url("../images/steins;gate.jpg");
+    background-size: contain;
+    border-color: var(--team2-clr);
+}
+
+.team .name{
+    color: var(--lm-text-clr-alt);
+    text-align: center;
+
+    width: 350px;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1em 2em 1em 2em;
+    border-radius: 0 0 var(--border-radius-alt-3) var(--border-radius-alt-3);
+    border-top: 5px solid transparent;
+}
+
+.team.team1 .name{
+    background: var(--team1-clr-alt);
+    border-color: var(--team1-clr)
+}
+
+.team.team2 .name{
+    background: var(--team2-clr-alt);
+    border-color: var(--team2-clr)
+}
+
+.match-container .body .versus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-3);
+}
+
+.versus .versus-letter{
+    font-size: 5em;
+    color: var(--lm-highlight-clr);
+}
+
+.versus .versus-letter .letter-alt{
+    color: var(--lm-highlight-clr-alt);
+}
+
+
+@media(min-width: 1024px){
+    body{
+        height: 100%;
+    }
+
+    .match-container .header{
+        gap: 1em;
+        padding: 1em 2em 1em 2em;
+
+        width: 80%;
+        margin-inline: auto;
+
+        border-radius: 0 0 var(--border-radius-alt) var(--border-radius-alt);
+    }
+
+    .match-container .body{
+        flex-direction: row;
+        justify-content: center;
+        gap: 4em;
+        margin: 0;
+
+        height: 80vh;
+    }
+
+    .team .picture-frame{
+        width: 280px;
+        height: 400px;
+
+    }
+    .team .name{
+        width: 280px;
+    }
+}
+
+@media(min-width: 1400px){
+    .team .picture-frame{
+        width: 350px;
+        height: 500px;
+    }
+    .team .name{
+        width: 350px;
+    }
+}
