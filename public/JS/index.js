@@ -1,8 +1,4 @@
-
-
-
-
-
+/* DISPLAY HEADER NAV(MOBILE) */
 const displayOptionsIcon = document.querySelector(".header-items-icon");
 displayOptionsIcon.addEventListener("click", displayOptions);
 
@@ -17,10 +13,11 @@ function displayOptions(){
 }
 
 
-
 /* CHANGE HIGHLIGHT*/
-const highlightDots = document.querySelectorAll(".highlight-container .dots .dot");
+const highlightDots      = document.querySelectorAll(".highlight-container .dots .dot");
 const highlightContainer = document.querySelectorAll(".highlight-container .item");
+const MAX_INDEX     = 4;
+var highlightIndex  = 2;
 
 highlightDots.forEach(dot => {
     const index = Number(dot.dataset.id);
@@ -28,10 +25,18 @@ highlightDots.forEach(dot => {
 });
 
 function slideHighlight(index){
+    if(index > MAX_INDEX){
+        index = 1;
+        highlightIndex = index;
+    }
+
     highlightContainer.forEach(item => {
         if(! item.classList.contains("hidden")){
             item.classList.add("hidden");
         }
     });
     highlightContainer[index-1].classList.remove("hidden");
+
+    highlightIndex++;
 }
+setInterval(() => {slideHighlight(highlightIndex)}, 3000); // 3 sec
