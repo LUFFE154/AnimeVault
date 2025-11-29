@@ -103,8 +103,10 @@ main .content .body .body-form .item input[type="text"]{
 }
 main .content .body .body-form .item input[type="number"]:hover,
 main .content .body .body-form .item select:hover,
+main .content .body .body-form .item input[type="text"]:hover,
 main .content .body .body-form .item input[type="number"]:focus,
-main .content .body .body-form .item select:focus{
+main .content .body .body-form .item select:focus,
+main .content .body .body-form .item input[type="text"]:focus{
     background: transparent;
     border-color: var(--lm-highlight-clr);
 }
@@ -132,7 +134,7 @@ main .content .body .body-form .item input[type="range"]{
         margin-inline: 1em;
 
         display: grid;
-        grid-template-columns: 45% auto;
+        grid-template-columns: 40% auto;
         
         background: var(--lm-lighter-clr);
         border-radius: var(--border-radius);
@@ -184,15 +186,18 @@ main .content .body .body-form .item input[type="range"]{
 }
 
 .dark-mode main .content .body .body-form .item input[type="number"],
-.dark-mode main .content .body .body-form .item select{
+.dark-mode main .content .body .body-form .item select,
+.dark-mode main .content .body .body-form .item input[type="text"]{
     background-color:  var(--dm-bg-clr-1);
     color: var(--dm-text-clr);
 }
 
 .dark-mode main .content .body .body-form .item input[type="number"]:hover,
 .dark-mode main .content .body .body-form .item select:hover,
+.dark-mode main .content .body .body-form .item input[type="text"]:hover,
 .dark-mode main .content .body .body-form .item input[type="number"]:focus,
-.dark-mode main .content .body .body-form .item select:focus{
+.dark-mode main .content .body .body-form .item select:focus,
+.dark-mode main .content .body .body-form .item input[type="text"]:focus{
     border-color: var(--dm-highlight-clr);
 }
 

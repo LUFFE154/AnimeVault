@@ -110,6 +110,9 @@ a{
 
 	color: var(--lm-text-clr);
 }
+.section-title .font-awesome-icon{
+	fill: var(--lm-text-clr);
+}
 .section-title span{
 	gap: 0.5em;
 }
@@ -122,6 +125,8 @@ a{
 .section-title svg{
 	width: 30px;
 }
+
+
 
 .default-link-button{
 	width: 100%;
@@ -262,6 +267,9 @@ footer span{
 
 .dark-mode .section-title .title-hr{
 	background: var(--dm-linear-gradient);
+}
+.dark-mode .section-title .font-awesome-icon{
+	fill: var(--dm-text-clr);
 }
 
 .dark-mode .default-link-button{

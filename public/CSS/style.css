@@ -246,13 +246,13 @@ header .items a:hover .font-awesome-icon{
 	line-height: 1.5em;
 }
 .feature.feature-1{
-	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/discord_s1pbvp.png");
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/discord_s1pbvp.png") var(--lm-lighter-clr);
 }
 .feature.feature-2{
-	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png");
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png") var(--lm-lighter-clr);
 }
 .feature.feature-3{
-	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png");
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png") var(--lm-lighter-clr);
 }
 
 #discord-bot{
@@ -418,7 +418,7 @@ header .items a:hover .font-awesome-icon{
 
 	#features .box-container .feature{
 		height: 300px;
-		width: 400px;
+		width: 450px;
 		margin: 0 auto;
 	}
 	#features .box-container .feature:hover{
@@ -529,7 +529,15 @@ header .items a:hover .font-awesome-icon{
 	border: 1px solid var(--dm-highlight-clr);
 }
 
-
+.dark-mode .feature.feature-1{
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/discord_s1pbvp.png"), var(--dm-darker-clr);
+}
+.dark-mode .feature.feature-2{
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png"), var(--dm-darker-clr);
+}
+.dark-mode .feature.feature-3{
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png"), var(--dm-darker-clr);
+}
 
 @media(min-width: 1024px){
 	.dark-mode{
