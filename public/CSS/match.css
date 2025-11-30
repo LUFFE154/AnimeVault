@@ -1,6 +1,4 @@
-
 body{
-    
     background: var(--lm-bg-clr-1);
 }
 
@@ -9,23 +7,20 @@ body{
     flex-direction: column;
     gap: 5em;
 }
-
 .match-container .header{
-    background: var(--lm-highlight-clr);
+    padding: 1em 1em 2em 1em;
 
     display: flex;
     flex-direction: column;
     gap: 2em;
-
-    padding: 1em 1em 2em 1em;
-
+    
+    background: var(--lm-highlight-clr);
     border-radius: 0 0 var(--border-radius-alt-3) var(--border-radius-alt-3);
     box-shadow: 0px 5px 5px var(--lm-shadow-alt);
 }
 .match-container .header span{
     justify-content: space-between;
 }
-
 .match-container .header svg{
     width: 35px;
 }
@@ -35,39 +30,36 @@ body{
 }
 .match-container .header h1{
     text-align: center;
-    font-family: var(--font-3);
     font-weight: normal;
+    font-family: var(--font-3);
 }
 .match-container .header,
 .match-container .header svg{
     color: var(--lm-text-clr-alt);
 }
-
 .match-container .header .default-link-button{
+    width: 300px;
     border-color: var(--lm-lighter-clr);
     color: var(--lm-text-clr-alt);
-
-    width: 300px;
 }
 .match-container .header .default-link-button:hover{
     border-color: var(--lm-lighter-clr);
     color: var(--lm-highlight-clr);
-    background-color: var(--lm-lighter-clr);
-
-    width: 300px;
+    background: var(--lm-lighter-clr);
 }
-
 .match-container .body{
+    margin: 1em;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    margin: 1em;
 }
 
 .team{
     width: fit-content;
-    height: fit-content;   
+    height: fit-content; 
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,73 +67,62 @@ body{
 
     transition: var(--transition-time);
 }
-
 .team:hover{
     transform: scale(1.02);
     cursor: pointer;
-
 }
-
 .team .picture-frame{
     width: 350px;
     height: 500px;
+
     border-radius: var(--border-radius);
-
     box-shadow: 0px 0px 10px var(--lm-shadow);
-
     border: 2px solid transparent;
 }
-
 .team.team1 .picture-frame{
-    background: url("../images/container1.png"), url("../images/kaguya-sama.jpg");
+    background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/container1_a3weby.png"), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/kaguya-sama_rbt8gw.jpg");
     background-size: contain;
     border-color: var(--team1-clr);
 }
-
 .team.team2 .picture-frame{
-    background: url("../images/container2.png"), url("../images/steins;gate.jpg");
+    background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/container2_esgoby.png"), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg");
     background-size: contain;
     border-color: var(--team2-clr);
 }
-
 .team .name{
-    color: var(--lm-text-clr-alt);
-    text-align: center;
-
     width: 350px;
     min-height: 70px;
+    padding: 1em 2em 1em 2em;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 1em 2em 1em 2em;
+    color: var(--lm-text-clr-alt);
     border-radius: 0 0 var(--border-radius-alt-3) var(--border-radius-alt-3);
     border-top: 5px solid transparent;
+    text-align: center;
 }
-
 .team.team1 .name{
     background: var(--team1-clr-alt);
     border-color: var(--team1-clr)
 }
-
 .team.team2 .name{
     background: var(--team2-clr-alt);
     border-color: var(--team2-clr)
 }
 
-.match-container .body .versus{
+.versus{
     display: flex;
     flex-direction: column;
     align-items: center;
+
     font-family: var(--font-3);
 }
-
 .versus .versus-letter{
     font-size: 5em;
     color: var(--lm-highlight-clr);
 }
-
 .versus .versus-letter .letter-alt{
     color: var(--lm-highlight-clr-alt);
 }
@@ -153,28 +134,41 @@ body{
     }
 
     .match-container .header{
-        gap: 1em;
-        padding: 1em 2em 1em 2em;
+        padding: 0;
 
-        width: 80%;
-        margin-inline: auto;
+        gap: 0;
 
+        background: transparent;
+        box-shadow: none;
+    }
+    .match-container .header span{
+        padding: 1em;
+        box-shadow: 0px 5px 5px var(--lm-shadow-alt);
+    }
+    .match-container .header h1{
+        width: 90%;
+        padding: 0.5em;
+        margin: 0 auto;
+
+        box-shadow: 0px 5px 5px var(--lm-shadow-alt);
         border-radius: 0 0 var(--border-radius-alt) var(--border-radius-alt);
     }
-
+    .match-container .header span,
+    .match-container .header h1{
+        background: var(--lm-highlight-clr);
+    }
     .match-container .body{
+        height: 80vh;
+        margin: 0;
+
         flex-direction: row;
         justify-content: center;
         gap: 4em;
-        margin: 0;
-
-        height: 80vh;
     }
 
     .team .picture-frame{
         width: 280px;
         height: 400px;
-
     }
     .team .name{
         width: 280px;
@@ -188,5 +182,72 @@ body{
     }
     .team .name{
         width: 350px;
+    }
+}
+
+
+/* DARK THEME*/
+.dark-mode{
+    background-color: var(--dm-bg-clr-1);
+}
+
+.dark-mode .match-container .header{
+    background: var(--dm-highlight-clr);
+    box-shadow: 0px 5px 5px var(--dm-shadow);
+}
+
+.dark-mode .match-container .header svg:hover{
+    color: var(--dm-darker-clr);
+}
+
+.dark-mode .match-container .header,
+.dark-mode .match-container .header svg{
+    color: var(--dm-text-clr);
+}
+
+.dark-mode .team .picture-frame{
+    box-shadow: 0px 0px 10px var(--dm-shadow-alt);
+}
+
+.dark-mode .team.team1 .picture-frame{
+    background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/dm-container1_btbsxq.png"), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/kaguya-sama_rbt8gw.jpg");
+    background-size: contain;
+}
+.dark-mode .team.team2 .picture-frame{
+    background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/dm-container2_hkpzzq.png"), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg");
+    background-size: contain;
+}
+
+.dark-mode .team .name{
+    color: var(--dm-text-clr);
+}
+
+.dark-mode .versus .versus-letter{
+    color: var(--dm-highlight-clr);
+}
+.versus .versus-letter .letter-alt{
+    color: var(--dm-highlight-clr-alt);
+}
+
+
+@media(min-width: 1024px){
+    .dark-mode .match-container .header{
+        padding: 0;
+
+        gap: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .dark-mode .match-container .header span{
+        box-shadow: 0px 5px 5px var(--dm-shadow-alt);
+    }
+    .dark-mode .match-container .header h1{
+        box-shadow: 0px 5px 5px var(--dm-shadow-alt);
+    }
+
+    .dark-mode .match-container .header span,
+    .dark-mode .match-container .header h1{
+        background: var(--dm-highlight-clr);
     }
 }

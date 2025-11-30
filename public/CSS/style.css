@@ -17,14 +17,14 @@ main{
 header{
 	padding: 1em;
 	margin-inline: 1em;
-	border-radius: var(--border-radius);
-	background: var(--lm-lighter-clr-alt);
-
-	box-shadow: 0px 5px 5px var(--lm-shadow);
 
 	display: flex;
 	flex-direction: column;
 	gap: 1.5em;
+
+	border-radius: var(--border-radius);
+	background: var(--lm-lighter-clr-alt);
+	box-shadow: 0px 5px 5px var(--lm-shadow);
 }
 header .title{
 	justify-content: space-between;
@@ -33,13 +33,14 @@ header .title h1{
 	padding-right: 0.5em;
 
 	font: normal 2em var(--font-1);
+	color: var(--lm-highlight-clr);
+
 	border-right: 1px solid var(--lm-highlight-clr);
 }
 header .title svg{
 	width: 35px;
 	cursor: pointer;
 }
-
 header .header-items-icon{
 	position: relative;
 }
@@ -51,7 +52,6 @@ header .header-items-icon svg{
 header .header-items-icon .active{
 	opacity: 1;
 }
-
 header .items{
 	display: none;
 }
@@ -105,9 +105,9 @@ header .items a:hover .font-awesome-icon{
 .index-hero .title .buttons{
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
 	align-items: center;
 	justify-content: space-between;
+	gap: 1em;
 }
 
 .highlight-container{
@@ -141,7 +141,6 @@ header .items a:hover .font-awesome-icon{
 }
 .highlight-container .item-text{
 	min-width: 350px;
-
 	padding-top: 1em;
 
 	display: flex;
@@ -150,8 +149,15 @@ header .items a:hover .font-awesome-icon{
 
 	border-top: 1px solid var(--lm-highlight-clr);
 }
+.highlight-container .item-text h1{
+	height: 70px;
+	color: var(--lm-darker-clr);
+}
 .highlight-container .item-text .item-link{
 	align-self: self-end;
+}
+.highlight-container .item-text .item-link:hover{
+	text-decoration: underline;
 }
 .highlight-container .sub-info{
 	justify-content: space-between;
@@ -210,9 +216,11 @@ header .items a:hover .font-awesome-icon{
 }
 
 #features{
+	min-height: 85vh;
+
 	display: flex;
 	flex-direction: column;
-	gap: 2em;
+	gap: 5em;
 }
 #features .box-container{
 	display: flex;
@@ -225,7 +233,6 @@ header .items a:hover .font-awesome-icon{
 #features .box-container .feature{
 	min-height: fit-content;
 	height: 300px;
-
 	padding: 1em;
 
 	box-shadow: 0px 0px 10px var(--lm-shadow-alt);
@@ -289,7 +296,6 @@ header .items a:hover .font-awesome-icon{
 }
 
 
-
 @media(min-width: 1024px){
 	body{
 		margin-top: 1.5em;
@@ -299,10 +305,11 @@ header .items a:hover .font-awesome-icon{
 	}
 
 	header{
-		flex-direction: row;
-		gap: 2em;
 		width: fit-content;
 		margin-inline: auto;
+
+		flex-direction: row;
+		gap: 2.5em;
 	}
 	header .title h1{
 		font-size: 1.6em;
@@ -314,7 +321,7 @@ header .items a:hover .font-awesome-icon{
 	header .items.active{
 		display: flex;
 		flex-direction: row;
-		gap: 1.5em;
+		gap: 2.5em;
 		font-size: 1em;
 	}
 	header .items a svg{
@@ -324,11 +331,12 @@ header .items a:hover .font-awesome-icon{
 	.index-hero{
 		width: 75%;
 		margin: 0 auto;
+		margin-bottom: 2em;
 	}
 
 	.highlight-container .item .image{
-		border-left: 5px solid var(--lm-highlight-clr);
 		padding-left: 1em;
+		border-left: 5px solid var(--lm-highlight-clr);
 	}
 	.highlight-container .item .info{
 		flex-direction: row;
@@ -383,8 +391,6 @@ header .items a:hover .font-awesome-icon{
 	#discord-bot div .container p a:hover{
 		text-decoration: underline;
 	}
-
-	
 }
 
 
@@ -418,8 +424,7 @@ header .items a:hover .font-awesome-icon{
 
 	#features .box-container .feature{
 		height: 300px;
-		width: 450px;
-		margin: 0 auto;
+		width: 400px;
 	}
 	#features .box-container .feature:hover{
 		transform: scale(0.99);
@@ -427,6 +432,7 @@ header .items a:hover .font-awesome-icon{
 	}
 	#features .box-container{
 		flex-direction: row;
+		gap: 2em;
 	}
 	#features .default-link-button{
 		width: 500px;
@@ -450,9 +456,25 @@ header .items a:hover .font-awesome-icon{
 		width: 300px;
 		height: 420px;
 	}
+	#features .box-container{
+		gap: 4em;
+	}
+
+	
+}
+
+@media(min-width: 1550px){
+	#features .box-container{
+		gap: 5em;
+	}
+	#features .box-container .feature{
+		height: 300px;
+		width: 450px;
+	}
 }
 
 
+/* DARK THEME*/
 .dark-mode{
 	background-image: var(--dm-mob-bg-gradient);
 }
@@ -468,19 +490,19 @@ header .items a:hover .font-awesome-icon{
 
 .dark-mode header .items a,
 .dark-mode header .items a svg{
-	color: var(--dm-lighter-clr);
+	color: var(--dm-text-clr);
 }
 
 .dark-mode header .items a .font-awesome-icon{
-	fill: var(--dm-lighter-clr);
+	fill: var(--dm-text-clr);
 }
 
 .dark-mode header .items a:hover,
 .dark-mode header .items a:hover svg{
-	color: var(--dm-text-clr);
+	color: var(--dm-lighter-clr);
 }
 .dark-mode header .items a:hover .font-awesome-icon{
-	fill: var(--dm-text-clr);
+	fill: var(--dm-lighter-clr);
 }
 
 .dark-mode .index-hero .title h1{
@@ -507,16 +529,17 @@ header .items a:hover .font-awesome-icon{
 .dark-mode .sub-info #status svg{
 	color: #83dd73;
 }
-
 .dark-mode .highlight-container .dots .dot{
 	border-color: var(--dm-highlight-clr);
 }
-
 .dark-mode .highlight-container .dots .dot:hover{
 	background: var(--dm-highlight-clr);
 }
 .dark-mode .highlight-container .dots .dot.selected{
 	background: var(--dm-highlight-clr);
+}
+.dark-mode .highlight-container .item-text h1{
+	color: var(--dm-lighter-clr);
 }
 
 .dark-mode #features .box-container .feature{

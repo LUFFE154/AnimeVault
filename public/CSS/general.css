@@ -31,8 +31,8 @@
     --dm-mob-bg-gradient    : linear-gradient(to top, var(--dm-bg-clr-1) 70%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/mobile-dm-bg_nhvjms.png");
     --dm-mob-bg-gradient-alt: linear-gradient(to top, var(--dm-bg-clr-1) 80%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/mobile-dm-bg_nhvjms.png");
     --dm-desk-bg-gradient   : linear-gradient(to top, var(--dm-bg-clr-1) 70%, transparent), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/dm-bg_kuphgi.png");
-    --dm-shadow             : #2b062681;
-    --dm-shadow-alt         : #8a1d7b81;
+    --dm-shadow             : #383237b6;
+    --dm-shadow-alt         : #5a5559a1;
 
     --team2-clr             : #FF9D9D;
 	--team1-clr-alt         : #565688;
@@ -47,6 +47,9 @@
 	--transition-time		: 0.3s linear;
 }
 
+html{
+	scroll-behavior: smooth;
+}
 *{
     padding: 0;
     margin: 0;
@@ -59,7 +62,6 @@ body{
 
 	transition: var(--transition-time);
 }
-
 body .hidden-div{
 	display: none;
 }
@@ -82,6 +84,9 @@ a{
 	text-decoration: none;
 	color: var(--lm-highlight-clr);
 }
+section{
+	padding-block: 5em;
+}
 .font-awesome-icon{
 	fill: var(--lm-highlight-clr);
 }
@@ -90,8 +95,6 @@ a{
 	width: 95%;
 	margin: 0 auto;
 	height: 5px;
-
-	margin-block: 5em;
 
 	background: var(--lm-linear-gradient);
 }
@@ -125,7 +128,6 @@ a{
 .section-title svg{
 	width: 30px;
 }
-
 
 
 .default-link-button{
@@ -241,9 +243,17 @@ footer span{
 	footer{
 		flex-direction: row;
 	}
+
+	section{
+		min-height: 70vh;
+		align-items: center;
+		justify-content: center;
+	}
+
 }
 
 
+/* DARK THEME*/
 .dark-mode{
 	color: var(--dm-text-clr);
 }
@@ -287,10 +297,10 @@ footer span{
 
 .dark-mode .change-language span:hover,
 .dark-mode .change-theme svg:hover{
-	color: var(--dm-highlight-clr);
+	color: var(--dm-lighter-clr);
 }
-.change-language span:hover svg{
-	color: var(--dm-highlight-clr);
+.dark-mode .change-language span:hover svg{
+	color: var(--dm-lighter-clr);
 }
 
 .dark-mode footer{

@@ -20,8 +20,10 @@ const MAX_INDEX     = 4;
 var highlightIndex  = 2;
 
 highlightDots.forEach(dot => {
-    const index = Number(dot.dataset.id);
-    dot.addEventListener("click", () => {slideHighlight(index)});
+    dot.addEventListener("click", () => {
+        highlightIndex = Number(dot.dataset.id);
+        slideHighlight(highlightIndex);
+    });
 });
 
 function slideHighlight(index){
@@ -36,7 +38,6 @@ function slideHighlight(index){
         }
     });
     highlightContainer[index-1].classList.remove("hidden");
-
     highlightIndex++;
 }
-setInterval(() => {slideHighlight(highlightIndex)}, 3000); // 3 sec
+setInterval(() => {slideHighlight(highlightIndex)}, 5000); // 5sec
