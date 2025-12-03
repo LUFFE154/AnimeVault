@@ -13,7 +13,7 @@ function displayOptions(){
 }
 
 
-/* CHANGE HIGHLIGHT*/
+/* CHANGE HIGHLIGHT */
 const highlightDots      = document.querySelectorAll(".highlight-container .dots .dot");
 const highlightContainer = document.querySelectorAll(".highlight-container .item");
 const MAX_INDEX     = 4;

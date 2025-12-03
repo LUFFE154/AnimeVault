@@ -6,14 +6,269 @@
     <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="CSS/general.css">
-    <link rel="stylesheet" href="bracket.css">
+    <link rel="stylesheet" href="CSS/match.css">
+    <link rel="stylesheet" href="CSS/bracket.css">
 
     <title>Tournament Bracket | AnimeVault</title>
 </head>
 <body>
+    <main class="flex-column">
+        <div class="header flex-column">
+            <span>
+                <svg onclick="window.location.href = 'tournamentMatch.html'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                </svg>
+                <a href="bracket.html" class="mobile"><img src="images/lm-bracket-icon.png" alt=""></a>
+            </span>
+            <h1>Título Torneio</h1>
+            <a href="bracket.html"><img src="images/lm-bracket-icon.png" alt=""></a>
+        </div>
+       <!--
+        <div class="bracket-hero teams64">
+            <div class="bracket-container">
+                <div class="bracket-title">
+                    <h1>PlayOffs-R1</h1>
+                    <h1>Oitavas-Final</h1>
+                    <h1>Quartas-Final</h1>
+                    <h1>Semi-Final</h1>
+                    <h1>Final</h1>
+                    <h1>Vencedor</h1>
+                </div>
+                <div class="bracket-col-container">
+                    <div class="bracket-col playoffs-r1 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>  
 
-
-
-    
+                    <div class="bracket-col playoffs-r2 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r3 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r4 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r5 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r6 flex-column">
+                    <div class="bracket-item winner-team flex-column">
+                        <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    -->
+        
+        <div class="bracket-hero teams32">
+            <div class="bracket-container">
+                <div class="bracket-title">
+                    <h1>Oitavas-Final</h1>
+                    <h1>Quartas-Final</h1>
+                    <h1>Semi-Final</h1>
+                    <h1>Final</h1>
+                    <h1>Vencedor</h1>
+                </div>
+                <div class="bracket-col-container"> 
+                    <div class="bracket-col playoffs-r2 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r3 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r4 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r5 flex-column">
+                        <div class="bracket-item flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                            <div class="team team2"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p>Time2</p></div>
+                        </div>
+                    </div>
+                    <div class="bracket-col playoffs-r6 flex-column">
+                        <div class="bracket-item winner-team flex-column">
+                            <div class="team team1"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764527946/steins_gate_dfnljb.jpg" alt=""><p><abbr title="Time1asdasdasdasdasdasd">Time1asdasdasdasdasdasd</abbr></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
+
+
+<script src="JS/general.js"></script>

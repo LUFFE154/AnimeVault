@@ -10,8 +10,6 @@ main{
 main .title{
     padding: 1em 2em;
 
-    display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 0.5em;
 
@@ -43,19 +41,13 @@ main .content{
     padding: 1em;
     margin: 1em;
 
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-
     background: var(--lm-lighter-clr);
     border-radius: var(--border-radius);
 }
 main .content nav{
     justify-content: space-between;
 }
-main .content nav .index-icon{
-    gap: 0.5em;
-}
+
 main .content nav .index-icon:hover,
 main .content nav .index-icon:hover svg{
     text-decoration: underline;
@@ -67,22 +59,12 @@ main .content nav .toggle-icons{
 main .content nav .toggle-icons svg{
     width: 30px;
 }
-main .content .body{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
+
 main .content .body .default-link-button{
     margin-top: 1em;
 }
-main .content .body .body-form{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
+
 main .content .body .body-form .item{
-    display: flex;
-    flex-direction: column;
     gap: 0.3em;
 }
 main .content .body .body-form .item input[type="number"]{

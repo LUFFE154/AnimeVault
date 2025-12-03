@@ -17,22 +17,23 @@
 	--lm-linear-gradient	: linear-gradient(to left, transparent 0%, var(--lm-highlight-clr) 50%, transparent 100%);
 	--lm-mob-bg-gradient	: linear-gradient(to top, var(--lm-bg-clr-1) 70%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/mobile-lm-bg_iltgwx.jpg");
 	--lm-mob-bg-gradient-alt: linear-gradient(to top, var(--lm-bg-clr-1) 80%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/mobile-lm-bg_iltgwx.jpg");
-	--lm-desk-bg-gradient	: linear-gradient(to top, var(--lm-bg-clr-1) 70%, transparent), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/lm-bg_gzmkde.jpg");
+	--lm-desk-bg-gradient	: linear-gradient(to top, var(--lm-bg-clr-1) 75%, transparent), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/lm-bg_gzmkde.jpg");
 	--lm-shadow				: #40103925;
-	--lm-shadow-alt			: #40103973;
+	--lm-shadow-alt			: #4d414b93;
 
 	--dm-bg-clr-1           : #342836;
 	--dm-lighter-clr        : #DCC1EC;
 	--dm-darker-clr         : #4C3E4B;
+	--dm-darker-clr-alt     : #5c4c5a;
 	--dm-highlight-clr      : #AD67CD;
 	--dm-highlight-clr-alt  : #C588ED;
 	--dm-text-clr           : #FFFFFF;
     --dm-linear-gradient    : linear-gradient(to left, transparent 0%, var(--dm-highlight-clr) 50%, transparent 100%);
-    --dm-mob-bg-gradient    : linear-gradient(to top, var(--dm-bg-clr-1) 70%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/mobile-dm-bg_nhvjms.png");
+    --dm-mob-bg-gradient    : linear-gradient(to top, var(--dm-bg-clr-1) 85%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/mobile-dm-bg_nhvjms.png");
     --dm-mob-bg-gradient-alt: linear-gradient(to top, var(--dm-bg-clr-1) 80%, transparent),url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/mobile-dm-bg_nhvjms.png");
     --dm-desk-bg-gradient   : linear-gradient(to top, var(--dm-bg-clr-1) 70%, transparent), url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258969/dm-bg_kuphgi.png");
     --dm-shadow             : #383237b6;
-    --dm-shadow-alt         : #5a5559a1;
+    --dm-shadow-alt         : #832f72a1;
 
     --team2-clr             : #FF9D9D;
 	--team1-clr-alt         : #565688;
@@ -45,6 +46,17 @@
     --border-radius-alt-3   : 50px;
 
 	--transition-time		: 0.3s linear;
+}
+
+.align-center{
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+}
+.flex-column{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
 }
 
 html{
@@ -85,7 +97,7 @@ a{
 	color: var(--lm-highlight-clr);
 }
 section{
-	padding-block: 5em;
+	padding-block: 3em;
 }
 .font-awesome-icon{
 	fill: var(--lm-highlight-clr);
@@ -103,21 +115,15 @@ section{
 	width: fit-content;
 	margin: 0 auto;
 
-	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 0.1em;
+	gap: 0.2em;
 
 	font-weight: normal;
-
 	color: var(--lm-text-clr);
 }
 .section-title .font-awesome-icon{
 	fill: var(--lm-text-clr);
-}
-.section-title span{
-	gap: 0.5em;
 }
 .section-title .title-hr{
 	width: 120%;
@@ -183,10 +189,7 @@ section{
 	width: 35px;
 }
 
-.align-center{
-	display: flex;
-	align-items: center;
-}
+
 
 .change-language span,
 .change-theme svg{
