@@ -65,7 +65,6 @@ git clone https://github.com/LUFFE154/animevault.git
 ### 3. Start the server
 <pre>
 node api/src/server.js
-Server will run at:
 </pre>
 
 ### 4. Server URL
