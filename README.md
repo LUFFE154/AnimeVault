@@ -64,12 +64,17 @@ git clone https://github.com/LUFFE154/animevault.git
 
 ### 3. Start the server
 <pre>
-node src/server.js
+node api/src/server.js
 Server will run at:
 </pre>
 
 ### 4. Server URL
-<pre>http://localhost:3000/api</pre>
+Access webpage:
+<pre>http://localhost:3000</pre>
+Access only api:
+<pre>http://localhost:3000/api/</pre>
+example:
+<pre>http://localhost:3000/api/recommend?season_year=2025&season=fall&min_score=7</pre>
 
 ---
 

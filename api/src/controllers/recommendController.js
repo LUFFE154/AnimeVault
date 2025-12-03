@@ -3,7 +3,7 @@ const axios = require('axios');
 
 let animeCache = null;
 let cacheTimestamp = 0;
-const CACHE_TTL = 3600_000; // 1 hora
+const CACHE_TTL = 3600_000; // 1 hour
 
 const genreMap = {
   Action: 1,
@@ -18,32 +18,59 @@ const genreMap = {
 
 async function recommendAnime(req, res) {
   try {
-    const { genre, type, min_score, max_score, min_episodes, max_episodes } = req.query;
+    const { 
+      genre, type, min_score, max_score, 
+      min_episodes, max_episodes, season_year, season
+    } = req.query;
 
     const now = Date.now();
-    if (!animeCache || now - cacheTimestamp > CACHE_TTL) {
-      const response = await axios.get('https://api.jikan.moe/v4/anime', {
-        params: { limit: 25, order_by: 'score', sort: 'desc' }
-      });
+
+    const needSeason = season_year && season;
+
+    if ((!animeCache) || (now - cacheTimestamp > CACHE_TTL) || (needSeason)) {
+      let url;
+      let params = {};
+
+      if(needSeason){
+        // filter by season - other rout
+        url = `https://api.jikan.moe/v4/seasons/${season_year}/${season.toLowerCase()}`;
+      }else{
+        // other filters - default rout
+        url = "https://api.jikan.moe/v4/anime";
+        params = {limit: 25, order_by: 'score', sort: 'desc'};
+      }
+
+      const response = await axios.get(url, {params});
       animeCache = response.data.data;
       cacheTimestamp = now;
     }
 
+    // additional filters
     let filtered = animeCache;
 
-    if (genre && genreMap[genre]) filtered = filtered.filter(a => a.genres.some(g => g.mal_id === genreMap[genre]));
-    if (type) filtered = filtered.filter(a => a.type?.toLowerCase() === type.toLowerCase());
-    if (min_score) filtered = filtered.filter(a => a.score >= parseFloat(min_score));
-    if (max_score) filtered = filtered.filter(a => a.score <= parseFloat(max_score));
-    if (min_episodes) filtered = filtered.filter(a => a.episodes >= parseInt(min_episodes));
-    if (max_episodes) filtered = filtered.filter(a => a.episodes <= parseInt(max_episodes));
+    if (genre && genreMap[genre]) {
+      filtered = filtered.filter(a => 
+        Array.isArray(a.genres) &&
+        a.genres.some(g => g.mal_id === genreMap[genre])
+      );
+    }
+    if (type){
+      filtered = filtered.filter(a => 
+        a.type && a.type.toLowerCase() === type.toLowerCase()
+      );
+    }
+    if (min_score) filtered = filtered.filter(a => typeof a.score === "number" && a.score >= parseFloat(min_score));
+    if (max_score) filtered = filtered.filter(a => typeof a.score === "number" && a.score <= parseFloat(max_score));
+    if (min_episodes) filtered = filtered.filter(a => Number.isInteger(a.episodes) && a.episodes >= parseInt(min_episodes));
+    if (max_episodes) filtered = filtered.filter(a => Number.isInteger(a.episodes) && a.episodes <= parseInt(max_episodes));
 
+    // blank result
     if (filtered.length === 0) {
-      return res.status(404).json({ anime: null, message: 'Nenhum anime encontrado com esses filtros ❌' });
+      return res.status(404).json({ anime: null, message: ' Cannot find any anime with the selected filters. ❌' });
     }
 
-    const randomIndex = Math.floor(Math.random() * filtered.length);
-    const anime = filtered[randomIndex];
+    // chosing random anime from the filtered ones
+    const anime = filtered[Math.floor(Math.random() * filtered.length)];
 
     const mapped = {
       title: anime.title,
@@ -63,17 +90,17 @@ async function recommendAnime(req, res) {
     res.json({ anime: mapped });
 
   } catch (error) {
-    console.error('Erro no recommendAnime:', error.response?.data || error.message);
+    console.error('Error at recommendAnime:', error.response?.data || error.message);
 
     if (error.response?.status === 429) {
-      return res.status(429).json({ anime: null, message: '🚨 Rate-limited pela Jikan API. Tente novamente em alguns segundos!' });
+      return res.status(429).json({ anime: null, message: '🚨 Rate-limited by Jikan API. Try again in a feel seconds' });
     }
 
     if (error.response?.status === 400) {
-      return res.status(400).json({ anime: null, message: '❌ Parâmetros inválidos para a Jikan API.' });
+      return res.status(400).json({ anime: null, message: '❌ Invalid parameters for Jikan API.' });
     }
 
-    res.status(500).json({ anime: null, message: 'Ocorreu um erro inesperado ao buscar a recomendação ❌' });
+    res.status(500).json({ anime: null, message: ' An unexpected error occurred while retrieving\ recommendations. ❌' });
   }
 }
 

@@ -16,7 +16,7 @@ async function scrapeAnime(query) {
       url: anime.url
     }));
   } catch (err) {
-    console.error('Erro ao buscar anime:', err.message);
+    console.error('Error while retrieving anime:', err.message);
     return [];
   }
 }

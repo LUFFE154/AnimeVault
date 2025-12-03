@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 const { getAnime } = require('../controllers/scrapController');
 
-console.log('scrap.js foi carregado');
+console.log('scrap.js loaded');
 
 router.get('/:query', getAnime);
 

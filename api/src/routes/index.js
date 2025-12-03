@@ -1,18 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-console.log('index.js (rotas) carregado');
+console.log('index.js (routes) loaded');
 
 try {
   const recommendRoutes = require('./recommend');
   router.use('/recommend', recommendRoutes);
-  console.log('Rota /recommend montada');
+  console.log('Rout /recommend assembled');
 
   const scrapRoutes = require('./scrap');
   router.use('/scrap', scrapRoutes);
-  console.log('Rota /scrap montada');
+  console.log('Rout /scrap assembled');
 } catch (err) {
-  console.error('Erro ao carregar rotas:', err);
+  console.error('Error loading routes:', err);
 }
 
 module.exports = router;
