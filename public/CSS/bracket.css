@@ -99,13 +99,13 @@ main{
     gap: 23em;
 }
 
-.bracket-hero.teams64 .bracket-col.playoffs-r2{
+.bracket-hero.teams32 .bracket-col.playoffs-r2{
     gap: 8.25em;
 }
-.bracket-hero.teams64 .bracket-col.playoffs-r3{
+.bracket-hero.teams32 .bracket-col.playoffs-r3{
     gap: 22.8em;
 }
-.bracket-hero.teams64 .bracket-col.playoffs-r4{
+.bracket-hero.teams32  .bracket-col.playoffs-r4{
     gap: 53em;
 }
 

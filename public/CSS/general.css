@@ -96,6 +96,10 @@ a{
 	text-decoration: none;
 	color: var(--lm-highlight-clr);
 }
+button{
+	background: transparent;
+	cursor: pointer;
+}
 section{
 	padding-block: 3em;
 }

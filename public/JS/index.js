@@ -1,42 +1,54 @@
 // retrieving 4 animes from the current season
 const date = new Date();
+const MAX_AMOUNT = 4;
 
-const year = date.getFullYear();
+const year  = date.getFullYear();
 const month = date.getMonth() + 1;
 
 var season = "winter";
-
-if (month > 3 && month <= 6) season = "spring";
-else if (month > 6 && month <= 9) season = "summer";
-else if(month > 9 && month <= 12)season = "fall";
+if      (month > 3 && month <= 6)   season = "spring";
+else if (month > 6 && month <= 9)   season = "summer";
+else if (month > 9 && month <= 12)  season = "fall";
 
 fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
     .then(res => res.json())
     .then(info => {
         const data = info.data;
 
-        const animeList = data.slice(0, 4).map(anime => ({
-            title: anime.title,
-            imageURL: anime.images?.jpg?.large_image_url,
-            synopsis: anime.synopsis,
-            linkMAL: anime.url,
-            score: anime.score,
-            episodes: anime.episodes ?? "?",
-            status: anime.status,
-            rank: anime.rank,
-            genre: anime.genres?.map(g => g.name).join(', ')
-        }));
+        console.log(data.length);
+
+        // select 4 random animes from season top 25
+        const animeList         = [];
+        const alreadySelected   = []; // list of index already selected with random method
+
+        do{
+            let index = Math.floor(Math.random() * 25);
+            if(! alreadySelected.includes(index)){
+                alreadySelected.push(index);
+            
+                animeList.push({
+                    title:      data[index].title,
+                    imageURL:   data[index].images?.jpg?.large_image_url,
+                    synopsis:   data[index].synopsis,
+                    linkMAL:    data[index].url,
+                    score:      data[index].score,
+                    episodes:   data[index].episodes ?? "?",
+                    status:     data[index].status,
+                    rank:       data[index].rank ? `#${data[index].rank}` : 'N/A',
+                    genre:      data[index].genres?.map(g => g.name).join(', ')
+                });
+            }
+        }while(alreadySelected.length != MAX_AMOUNT);
 
         const highlightContainer = document.querySelector(".highlight-container");
         var dataId = 1;
 
         animeList.forEach(anime => {
             const highlightItem = document.createElement("div");
-            highlightItem.classList.add("item", "flex-column")
+            highlightItem.classList.add("item", "flex-column");
             highlightItem.dataset.id = dataId;
-            if (dataId != 1) {
-                highlightItem.classList.add("hidden");
-            }
+
+            if (dataId != 1) highlightItem.classList.add("hidden");
 
             highlightItem.innerHTML += `
                 <div class="info flex-column">
@@ -56,7 +68,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
                                     </svg>
-                                    #${anime.rank}
+                                    ${anime.rank}
                                 </span>
                                 <span id="status" class="align-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -122,12 +134,12 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
 
             const dotsContainer = document.createElement("div");
             dotsContainer.classList.add("dots", "align-center");
-            for (let i = 0; i < 4; i++) {
+            for(let i = 0; i < 4; i++){
                 const dot = document.createElement("span");
                 dot.classList.add("dot");
 
-                dot.dataset.id = i + 1;
-                if (i + 1 == dataId) {
+                dot.dataset.id = i+1;
+                if(i+1 == dataId){
                     dot.classList.add("selected");
                 }
                 dotsContainer.insertAdjacentElement("beforeend", dot);
@@ -141,8 +153,9 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
     /* CHANGE HIGHLIGHT */
     const highlightDots  = document.querySelectorAll(".highlight-container .dots .dot");
     const highlightItems = document.querySelectorAll(".highlight-container .item");
+
     const MAX_INDEX     = 4;
-    var highlightIndex  = 2;
+    var highlightIndex  = 2; // starts at 2 when slide automatically 
 
     highlightDots.forEach(dot => {
         dot.addEventListener("click", () => {
@@ -152,7 +165,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
     });
 
     function slideHighlight(index){
-        if(index > MAX_INDEX){
+        if(index > MAX_INDEX){ // return to first highlight - case last one was the fourth
             index = 1;
             highlightIndex = index;
         }
@@ -166,8 +179,8 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
         highlightIndex++;
     }
     setInterval(() => {slideHighlight(highlightIndex)}, 5000); // 5sec
-
     });
+
 
 /* DISPLAY HEADER NAV(MOBILE) */
 const displayOptionsIcon = document.querySelector(".header-items-icon");
@@ -181,4 +194,8 @@ function displayOptions(){
     showItemsIcon.classList.toggle("active");
     hideItemsIcon.classList.toggle("active");
     headerItemsBox.classList.toggle("active");
+}
+
+if(localStorage.getItem("tournamentData")){
+    localStorage.removeItem("tournamentData");
 }

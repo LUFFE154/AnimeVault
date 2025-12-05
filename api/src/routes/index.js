@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express   = require('express');
+const router    = express.Router();
 
 console.log('index.js (routes) loaded');
 
@@ -14,5 +14,4 @@ try {
 } catch (err) {
   console.error('Error loading routes:', err);
 }
-
 module.exports = router;

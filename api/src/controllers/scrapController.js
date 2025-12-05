@@ -1,4 +1,4 @@
-console.log('scrapController carregado');
+console.log('scrapController loaded');
 
 const { scrapeAnime } = require('../utils/scraper');
 

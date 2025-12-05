@@ -18,9 +18,8 @@ try {
   console.error('Error loading routes:', err);
 }
 
-// default route
+// default route (webpage)
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public', 'index.html'));
 });
-app.listen(PORT, () => console.log(`Server live at port: ${PORT}`));
-
+app.listen(PORT, () => console.log(`Server live at port: http://localhost:${PORT}`));

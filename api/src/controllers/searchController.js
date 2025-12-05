@@ -1,4 +1,3 @@
-// src/controllers/searchController.js
 const axios = require('axios');
 
 async function searchAnime(req, res) {

@@ -1,4 +1,3 @@
-// src/controllers/randomController.js
 const axios = require('axios');
 
 async function randomAnime(req, res) {
