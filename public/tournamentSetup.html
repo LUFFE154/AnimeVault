@@ -14,12 +14,12 @@
 <body>
     <main>
         <div class="title flex-column">
-            <span class="title-icon">
+            <span class="title-icon" >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
                 </svg>
             </span>
-            <h1>Modo Torneio</h1>
+            <h1>Modo Torneio <small style="font-size: 0.5em">(BETA)</small></h1>
             <p>
                 Torneio no formato mata-mata com 16 ou 32 animes para coroar o vencedor. <br>
                 Ao retornar para a página inicial o torneio atual será encerrado.
@@ -27,7 +27,7 @@
         </div>
         <div class="content flex-column">
             <nav class="align-center">
-                <a href="index.html" class="index-icon align-center">
+                <a href="index.html" class="align-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                     </svg>
@@ -124,11 +124,82 @@
 </body>
 </html>
 
+<script src="JS/general.js"></script>
+
 <script>
-    if(localStorage.getItem("tournamentData")){ // not-finished tournament running
+    if(localStorage.getItem("tournamentData")){
         window.location.href ="tournamentMatch.html";
     }
-</script>
+    /* Controll the input values at tournament setup */
+    const minMaxInputs = document.querySelectorAll(".minMaxInputs");
 
-<script src="JS/general.js"></script>
-<script src="JS/tournament.js"></script>
+    minMaxInputs.forEach(item => {
+        const minInput = item.querySelector(".minInput");
+        const minRange = item.querySelector(".minRange");
+        const maxInput = item.querySelector(".maxInput");
+        const maxRange = item.querySelector(".maxRange");
+
+        minInput.addEventListener("input", () => {
+            minRange.value = minInput.value;
+
+            if(minInput.value > maxInput.value){
+                maxInput.value = minInput.value;
+                maxRange.value = minInput.value;
+            }
+        });
+
+        minRange.addEventListener("input", () => {
+            minInput.value = minRange.value;
+
+            if(minRange.value > maxRange.value){
+                maxInput.value = minRange.value;
+                maxRange.value = minRange.value;
+            }
+        });
+
+        maxInput.addEventListener("input", () => {
+            maxRange.value = maxInput.value;
+
+            if(maxInput.value < minInput.value){
+                minInput.value = maxInput.value;
+                minRange.value = maxInput.value;
+            }
+        });
+
+        maxRange.addEventListener("input", () => {
+            maxInput.value = maxRange.value;
+
+            if(maxRange.value < minRange.value){
+                minInput.value = maxRange.value;
+                minRange.value = maxRange.value;
+            }
+        });
+    });
+
+
+    /* Retrieve the inputs data  + redirect to tournament page */
+    const submitButton = document.querySelector(".submit-button");
+    submitButton.addEventListener("click", verifyData);
+
+    function verifyData(){
+        const titleInput = document.querySelector("#ititle");
+        if(titleInput.value === ""){
+            alert("Erro: Título do torneio não pode ser em branco");
+            return;
+        }
+
+        const formattedTitle = `${titleInput.value.slice(0,1).toUpperCase()}${titleInput.value.slice(1)}`;     
+
+        tournamentMap = {
+            title:      formattedTitle,
+            amount:     document.querySelector("#iamount").value,
+            minYear:    document.querySelector("#numberMinYear").value,
+            maxYear:    document.querySelector("#numberMaxYear").value,
+            minScore:   document.querySelector("#numberMinScore").value,
+            maxScore:   document.querySelector("#numberMaxScore").value,
+        };
+
+        localStorage.setItem("tournamentData", JSON.stringify(tournamentMap));
+        window.location.href = "tournamentMatch.html";
+    }
+</script>

@@ -12,8 +12,7 @@
     <title>Partida Torneio | AnimeVault</title>
 </head>
 <body>
-
-
+    <!-- MAIN HERE -->
     <footer>
         <span>
             <svg class="font-awesome-icon" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 512 512">
@@ -30,33 +29,21 @@
 </html>
 
 <script src="JS/general.js"></script>
+<script src="JS/tournament.js"></script>
 
 <script>
     if(! localStorage.getItem("tournamentData")){
         window.location.href("index.html");
-    }
+    }else{
+        const headerContent = matchHeader("1");
 
-    // convert string to object
-    const raw = localStorage.getItem("tournamentData");
-    const tournamentData = JSON.parse(raw);
+        // insert text at HTML
+        const main = document.createElement("main");
+        main.classList.add("match-container", "flex-column");
 
-    // insert text at HTML
-    const main = document.createElement("main");
-
-    const mainContent = `
-        <main class="match-container flex-column">
-            <div class="header flex-column">
-                <span>
-                    <svg onclick=" window.location.assign('index.html')" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-                    </svg>
-                    <a href="bracket.html" class="mobile"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764890490/lm-bracket-icon_ryarxp.png" alt="bracket page icon"></a>
-                </span>
-                <h1>${tournamentData["title"]}</h1>
-                <a href="bracket.html" target="_blank"><img src="https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764890490/lm-bracket-icon_ryarxp.png" alt="bracket page icon"></a>
-            </div>
-
-            <div class="body flex-column">
+        main.innerHTML = headerContent;
+        main.innerHTML += `
+            <div class="match flex-column">
                 <div class="team team1 flex-column" data-id="1">
                     <div class="picture-frame"></div>
                     <div class="name">Kaguya-sama: Love is War -Ultra Romantic-</div>
@@ -70,10 +57,8 @@
                     <div class="name">Steins;Gate</div>
                 </div>
             </div>
-        </main>
-    `;
-    main.innerHTML = mainContent;
-    body.insertAdjacentElement("afterbegin", main);
-
+        `;
+        body.insertAdjacentElement("afterbegin", main);
+    }
 
 </script>

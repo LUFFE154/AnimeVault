@@ -26,7 +26,7 @@ main .title .title-icon{
     align-items: center;
     justify-content: center;
 
-    background: var(--lm-bg-clr-1);
+    background: var(--lm-lighter-clr);
     border-radius: var(--border-radius);
 }
 main .title .title-icon svg{
@@ -36,6 +36,9 @@ main .title h1{
     font-family: var(--font-3);
     font-weight: normal;
 }
+main .title p{
+    font-weight: bold;
+}
 
 main .content{
     padding: 1em;
@@ -44,19 +47,26 @@ main .content{
     background: var(--lm-lighter-clr);
     border-radius: var(--border-radius);
 }
-main .content nav{
+
+nav{
     justify-content: space-between;
 }
 
-main .content nav .index-icon:hover,
-main .content nav .index-icon:hover svg{
-    text-decoration: underline;
-    color: var(--lm-highlight-clr-alt);
+nav a,
+nav a svg{
+    color:var(--lm-highlight-clr);
+    transition: var(--transition-time);
 }
-main .content nav .toggle-icons{
+nav a:hover,
+nav a:hover svg{
+    color:var(--lm-text-clr);
+    text-decoration: underline;
+}
+
+nav .toggle-icons{
     gap: 1em;
 }
-main .content nav .toggle-icons svg{
+nav .toggle-icons svg{
     width: 30px;
 }
 
@@ -150,20 +160,24 @@ main .content .body .body-form .item input[type="range"]{
 }
 
 .dark-mode main .title .title-icon{
-    background: var(--dm-bg-clr-1);
+    background: var(--dm-darker-clr);
 }
 
 .dark-mode main .content{
     background: var(--dm-darker-clr);
 }
 
-.dark-mode main .content nav .index-icon{
+.dark-mode nav .index-icon{
     color: var(--dm-text-clr);
 }
 
-.dark-mode main .content nav .index-icon:hover,
-.dark-mode main .content nav .index-icon:hover svg{
-    color: var(--dm-lighter-clr);
+.dark-mode nav a,
+.dark-mode nav a svg{
+    color:var(--dm-lighter-clr);
+}
+.dark-mode nav a:hover,
+.dark-mode nav a:hover svg{
+    color:var(--dm-text-clr);
 }
 
 .dark-mode main .content .body .body-form .item input[type="number"],
@@ -188,7 +202,6 @@ main .content .body .body-form .item input[type="range"]{
 
 @media(min-width: 1024px){
     .dark-mode main{
-        
         background: var(--dm-darker-clr);
         box-shadow: 0px 0px 10px var(--dm-shadow-alt);
     }

@@ -1,10 +1,6 @@
-main{
-    gap: 2em;
-    margin-bottom: 1em;
-}
-
 .bracket-hero{
-    max-width: 80vw;
+    padding-top: 2em;
+    max-width: 90vw;
     margin: 0 auto;
 }
 
@@ -18,7 +14,7 @@ main{
     overflow: auto;
 }
 
-.bracket-container .bracket-title{
+.bracket-title{
     min-width: 1500px;
     margin-bottom: 2em;
 
@@ -26,7 +22,7 @@ main{
     justify-content: space-between;
     align-items: center;
 }
-.bracket-container .bracket-title h1{
+.bracket-title h1{
     width: 200px;
 
     border-bottom: 2px solid var(--lm-highlight-clr);
@@ -46,47 +42,49 @@ main{
     gap: 1em;
 }
 
-.bracket-col-container .bracket-col .bracket-item{
+.bracket-item{
     gap: 0.3em;
 }
 
-.bracket-col-container .bracket-col .bracket-item .team{
+.bracket-item .team{
     height: fit-content;
     width: 180px;
     margin: 0 auto;
     padding: 0.5em;
 
     display: flex;
+    align-items: center;
     gap: 0.5em;
 
+    cursor: pointer;
     background: var(--lm-bg-clr-1);
 }
-.bracket-col-container .bracket-col .bracket-item .team:hover{
+.bracket-item .team:hover{
     background: var(--lm-lighter-clr-alt);
 }
-.bracket-col-container .bracket-col .bracket-item .team.team1{
+.bracket-item .team.team1{
     border-left: 5px solid var(--team1-clr);
     border-bottom: 3px solid var(--team1-clr);
     border-radius: 0 var(--border-radius) 0 0;
 }
-.bracket-col-container .bracket-col .bracket-item .team.team2{
+.bracket-item .team.team2{
     border-left: 5px solid var(--team2-clr);
     border-top: 3px solid var(--team2-clr);
     border-radius: 0 0 var(--border-radius) 0;
 }
-.bracket-col-container .bracket-col .bracket-item .team p{
+.bracket-item .team p{
     font-size: 0.8em;
 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.bracket-col-container .bracket-col .bracket-item .team img{
+.bracket-item .team img{
     width: 20px;
     object-fit: contain;
     border-radius: 5px;
 }
-.bracket-col-container .bracket-col .bracket-item.winner-team .team{
+.bracket-item.winner-team .team{
     border: 3px solid transparent;
     border-radius: 10px;
     animation: winner-border 2s ease-in-out infinite;
@@ -109,6 +107,28 @@ main{
     gap: 53em;
 }
 
+@media(min-width: 1700px){
+    .bracket-hero{
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+.dark-mode .bracket-container{
+    background-color: var(--dm-darker-clr);
+    box-shadow: 0px 0px 10px var(--dm-shadow-alt);
+}
+
+.dark-mode .bracket-title h1{
+    border-bottom: 2px solid var(--dm-highlight-clr);
+}
+.dark-mode .bracket-item .team{
+    background: var(--dm-bg-clr-1);
+}
+.dark-mode .bracket-item .team:hover{
+    background: var(--dm-darker-clr-alt);
+}
+
 
 @keyframes winner-border{
     0%{
@@ -122,26 +142,4 @@ main{
     100%{
         border-color: var(--team1-clr);
     }
-}
-
-@media(min-width: 1700px){
-    .bracket-hero{
-        max-width: 1600px;
-        margin: 0 auto;
-    }
-}
-
-.dark-mode .bracket-container{
-    background-color: var(--dm-darker-clr);
-    box-shadow: 0px 0px 10px var(--dm-shadow-alt);
-}
-
-.dark-mode .bracket-container .bracket-title h1{
-    border-bottom: 2px solid var(--dm-highlight-clr);
-}
-.dark-mode .bracket-col-container .bracket-col .bracket-item .team{
-    background: var(--dm-bg-clr-1);
-}
-.dark-mode .bracket-col-container .bracket-col .bracket-item .team:hover{
-    background: var(--dm-darker-clr-alt);
 }
