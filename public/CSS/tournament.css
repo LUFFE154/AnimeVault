@@ -72,6 +72,13 @@ nav .toggle-icons svg{
 
 main .content .body .default-link-button{
     margin-top: 1em;
+    font-family: var(--font-1);
+}
+main .content .body .default-link-button svg{
+    color: var(--lm-highlight-clr);
+}
+main .content .body .default-link-button:hover svg{
+    color: var(--lm-text-cl-alt);
 }
 
 main .content .body .body-form .item{
@@ -199,6 +206,14 @@ main .content .body .body-form .item input[type="range"]{
 .dark-mode main .content .body .body-form .item input[type="range"]{
     accent-color: var(--dm-highlight-clr-alt);
 }
+
+.dark-mode main .content .body .default-link-button svg{
+    color: var(--dm-text-clr);
+}
+.dark-mode main .content .body .default-link-button:hover svg{
+    color: var(--dm-text-clr);
+}
+
 
 @media(min-width: 1024px){
     .dark-mode main{

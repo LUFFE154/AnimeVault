@@ -180,93 +180,30 @@
 <script src="JS/tournament.js"></script>
 
 <script>
-    /*
-    function getTournamentAnimes(tournamentData){
-        const min_score = tournamentData["minScore"];
-        const max_score = tournamentData["maxScore"];
-
-        const minYear   = `${tournamentData["minYear"]}-01-01`;
-        const maxYear   = `${tournamentData["maxYear"]}-12-31`;
-
-        fetch(`https://api.jikan.moe/v4/anime?min_score=${min_score}&max_score=${max_score}&start_date${minYear}&&end_date=${maxYear}&limit=16`)
-            .then(res => res.json())
-            .then(info => {
-                try{
-                    const fetchData = info.data;
-                    var animeList = [];
-                    var id = 0;
-                    fetchData.forEach(anime => {
-                        animeList.push({
-                            teamId: id,
-                            title: anime.title,
-                            image: anime.images?.jpg?.large_image_url
-                        })
-                        id++;
-                    })
-
-                    function generatePlayoffs(teams){
-                        var rounds = [];
-                        var currentTeams = teams;
-
-                        while(currentTeams.length > 1){
-                            var matches = [];
-
-                            for(let i = 0; i < currentTeams.length; i += 2){ // add each match
-                                matches.push({
-                                    teamA: currentTeams[i],
-                                    teamB: currentTeams[i+1],
-                                    //winner: null
-                                    winner: currentTeams[i]
-                                });
-                            }
-
-                            rounds.push({
-                                name: `${rounds.length +1}`,
-                                matches
-                            })
-                        // fill next rounds with null (did not happened yet)
-                        currentTeams = new Array(matches.length).fill(null);
-                        }
-                        return rounds;
-                    }
-
-                    var playoffs = generatePlayoffs(animeList);
-                    console.log(playoffs)
-                    //console.log(playoffs[0].matches);
-                    var newAnimeList = [];
-                    playoffs[0].matches.forEach(match => {
-                        newAnimeList.push(match.winner);
-                    })
-                    playoffs = generatePlayoffs(newAnimeList);
-                    console.log(playoffs)
-                    
-                    newAnimeList = [];
-                    playoffs[0].matches.forEach(match => {
-                        newAnimeList.push(match.winner);
-                    })
-                    playoffs = generatePlayoffs(newAnimeList);
-                    console.log(playoffs);
-
-                    newAnimeList = [];
-                    playoffs[0].matches.forEach(match => {
-                        newAnimeList.push(match.winner);
-                    })
-                    playoffs = generatePlayoffs(newAnimeList);
-                    console.log(playoffs);
-                    
-                }catch(error){console.log(error)}
-            })
-    }
-    */
+       
     if(! localStorage.getItem("tournamentData")){
         window.location.href("index.html");
     }else{
         const raw = localStorage.getItem("tournamentData");
         const tournamentData = JSON.parse(raw);
-        //getTournamentAnimes(tournamentData);
 
-        const headerContent = matchHeader("2");
+
+        (async () => {
+            const initAnimeList = await getTournamentAnimes(tournamentData);
+            console.log(initAnimeList);
+            console.log(initAnimeList.length);
+
+            var bracket = generateBracket(initAnimeList);
+            
+            // bracket[bracket.length-1].matches[0].winner = "asd";
+            // tournament winner => console.log(bracket[bracket.length-1].matches[0].winner);
+            
+        })();
+
+
+
         
+        const headerContent = matchHeader("2");
         // insert text at HTML
         const main = document.querySelector(".main");
         main.innerHTML = headerContent;
@@ -359,5 +296,6 @@
                 </div>
             </div>
         `;
+        
     }
 </script>

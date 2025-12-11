@@ -40,3 +40,58 @@ function matchHeader(type){
     `;
     return headerContent;
 }
+
+
+async function getTournamentAnimes(tournamentData){
+    const min_score = tournamentData["minScore"];
+    const max_score = tournamentData["maxScore"];
+
+    const minYear   = `${tournamentData["minYear"]}-01-01`;
+    const maxYear   = `${tournamentData["maxYear"]}-12-31`;
+
+    var animeList = [];
+
+    const url = `https://api.jikan.moe/v4/anime?min_score=${min_score}&max_score=${max_score}&start_date=${minYear}&end_date=${maxYear}&limit=16`;
+
+    const res  = await fetch(url);
+    const info = await res.json();
+
+    var id = 0;
+    info.data.forEach(anime => {
+        animeList.push({
+            teamId: id,
+            title: anime.title,
+            image: anime.images?.jpg?.large_image_url
+        })
+        id++;
+    })
+
+    return animeList;
+}
+
+
+function generateBracket(teams) {
+    const rounds = [];
+    let currentTeams = teams;
+
+    while (currentTeams.length > 1) {
+        const matches = [];
+        for (let i = 0; i < currentTeams.length; i += 2) {
+            matches.push({
+                teamA: currentTeams[i],
+                teamB: currentTeams[i + 1],
+                //winner: null
+                winner: currentTeams[i+1]
+            });
+        }
+
+        rounds.push({
+            name: `Round ${rounds.length + 1}`,
+            matches
+        });
+
+        currentTeams = new Array(matches.length).fill(null);
+    }
+
+    return rounds;
+}

@@ -13,7 +13,7 @@ else if (month > 9 && month <= 12)  season = "fall";
 var seasonText = `${season.slice(0,1).toUpperCase()}${season.slice(1)} ${year}`
 
 fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
-    .then(res => res.json())
+    .then(res  => res.json())
     .then(info => {
         // hidden highlight skeleton
         const highlightSkeleton = document.querySelector(".highlight.skeleton");

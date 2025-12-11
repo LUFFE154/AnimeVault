@@ -63,10 +63,10 @@ header .items a{
 }
 header .items a,
 header .items a svg{
-	color: var(--lm-darker-clr);
+	color: var(--lm-text-clr);
 }
 header .items a .font-awesome-icon{
-	fill: var(--lm-darker-clr);
+	fill: var(--lm-text-clr);
 }
 header .items a:hover,
 header .items a:hover svg{
@@ -173,7 +173,7 @@ section.index-hero{
 	font-size: 3em;
 
 	font-family: var(--font-3);
-	color: var(--lm-highlight-clr);
+	color: var(--lm-darker-clr);
 	font-weight: normal;
 }
 .index-hero .title p{
@@ -223,7 +223,6 @@ section.index-hero{
 /* -=-=-=-=-=-=-=-=- INDEX HERO END -=-=-=-=-=-=-=-=- */
 
 
-
 /* -=-=-=-=-=-=-=-=- HIGHLIGHT START -=-=-=-=-=-=-=-=- */
 .highlight-container{
 	width: 90%;
@@ -263,9 +262,9 @@ section.index-hero{
 	text-align: left;
 }
 .highlight-title h1{
-	height: 75px;
+	height: 70px;
 
-	font-size: 2em;
+	font-size: 1.5em;
 	font-weight: bold;
 	color: var(--lm-darker-clr);
 	font-family: var(--font-2);
@@ -518,19 +517,19 @@ section.index-hero{
 /* -=-=-=-=-=-=-=-=- FEATURE START -=-=-=-=-=-=-=-=- */
 #features{
 	max-width: 1800px;
-	width: 90%;
-	margin: 0 auto;
 }
 
 #features .section-title{
 	margin-block: 1em;
 }
 #features .box-container{
+	width: 90%;
+	margin: 0 auto;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 2em;
-	width: 100%;
 
 	margin-bottom: 2em;
 }
@@ -575,7 +574,6 @@ section.index-hero{
 	#features .box-container .feature{
 		width: 400px;
 		height: 450px;
-		margin: 0 auto;
 	}
 }
 @media(min-width: 1200px){
@@ -592,15 +590,13 @@ section.index-hero{
 	#features .box-container .feature{
 		width: 350px;
 		height: 400px;
-		margin: 0 auto;
-		transition: var(--transition-time);
+		
 		cursor: default;
+		transition: var(--transition-time);
 	}
 	#features .box-container .feature:hover{
 		transform: scale(0.99);
-		
 	}
-
 	#features .box-container .feature p{
 		font-size: 1.1em;
 	}
@@ -609,7 +605,6 @@ section.index-hero{
 	#features .box-container .feature{
 		width: 400px;
 		height: 450px;
-		margin: 0 auto;
 	}
 	#features .default-link-button{
 		width: 30%;
@@ -677,40 +672,40 @@ section.index-hero{
 	#discord-bot{
 		gap: 3em;
 	}
-	#discord-bot div{
+	#discord-bot .hero{
 		width: 95%;
 		margin: 0 auto;
 
 		flex-direction: row;
 		justify-content: space-between;
 	}
-	#discord-bot div img{
+	#discord-bot .hero img{
 		width: 500px;
 		margin: 0 auto;
 	}
-	#discord-bot div .container{
+	#discord-bot .hero .container{
 		width: 650px;
 		margin: 0 auto;
 	}
-	#discord-bot div .container p{
+	#discord-bot .hero .container p{
 		font-size: 1.5em;
 		text-align: center;
 	}
-	#discord-bot div .container small{
+	#discord-bot .hero .container small{
 		font-size: 0.7em;
 	}
-	#discord-bot div .container p a:hover{
+	#discord-bot .hero .container p a:hover{
 		text-decoration: underline;
 	}
 }
 @media(min-width: 1200px){
-	#discord-bot div img{
+	#discord-bot .hero img{
 		width: 600px;
 		margin: 0 auto;
 	}
 }
 
-.dark-mode #discord-bot div img{
+.dark-mode #discord-bot .hero img{
 	box-shadow: 0px 0px 10px var(--dm-shadow-alt);
 	border-color: var(--dm-highlight-clr);
 }
