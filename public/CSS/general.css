@@ -195,21 +195,22 @@ section{
 .toggle-icons svg{
 	width: 35px;
 }
-.change-language span{
-	gap: 0.1em;
-}
-.change-language span,
-.change-theme svg{
 
+.change-theme svg{
 	transition: var(--transition-time);
 	cursor: pointer;
 }
-.change-language span:hover,
 .change-theme svg:hover{
 	transform: translateY(-0.3em);
 	color: var(--lm-highlight-clr);
 }
-.change-language span:hover svg{
+
+.change-language{
+	cursor: pointer;
+	transition: var(--transition-time);
+}
+.change-language:hover{
+	text-decoration: underline;
 	color: var(--lm-highlight-clr);
 }
 
@@ -309,12 +310,12 @@ footer span{
 	background-color: transparent;
 }
 
-.dark-mode .change-language span:hover,
 .dark-mode .change-theme svg:hover{
 	color: var(--dm-lighter-clr);
 }
-.dark-mode .change-language span:hover svg{
-	color: var(--dm-lighter-clr);
+
+.dark-mode .change-language:hover{
+	color: var(--dm-highlight-clr);
 }
 
 .dark-mode footer{

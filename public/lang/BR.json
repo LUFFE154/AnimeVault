@@ -1,0 +1,62 @@
+{
+    "pages": [
+        {
+            "name": "index",
+            "content": {
+                "header-nav-1": "Recursos",
+                "header-nav-2": "Bot Discord",
+                "header-nav-3": "Torneio",
+                "header-nav-4": "Documentação",
+                "lang": "BR",
+                "hero-p": "AnimeVault é um <strong>Bot do Discord</strong> para facilitar a busca por Animes, Mangás, Pessoas e Personagens tanto para quem está sozinho quanto com os amigos.",
+                "hero-button-1": "Adicionar ao seu servidor",
+                "hero-button-2": "Ver Recursos",
+                "highlight-ep": "<strong>Episódios: </strong>",
+                "highlight-gen": "<strong>Gêneros: </strong>",
+                "highlight-se": "<strong>Temporada: </strong>",
+                "highlight-sy": "<strong>Sinopse: </strong>",
+                "features-title": "Recursos",
+                "features-item-title-1": "Interaja diretamente pelo Discord",
+                "features-item-title-2": "Recomendações com base em filtros",
+                "features-item-title-3": "Torneios mata-mata entre animes*",
+                "feature-item-content-1": "Faça requisições diretamente pelo <strong>chat do seu servidor</strong> com base na <a href='https://jikan.moe' target='_blank'>Jikan API 🖇</a>.<br> Cada requisição completa retorna <em>título, sinopse, número de episódios, nota, rank, imagens e link direto para o <a href='https://myanimelist.net' target='_blank'>MAL 🖇</em></a>.",
+                "feature-item-content-2": "Receba recomendações aleatórias com base em filtros especificados(ou não) pelo usuário. <br> Alguns filtros são: <em>gênero, nota mínima ou e máxima e número de episódios",
+                "feature-item-content-3": "Faça um torneio com 16 ou 32 animes baseados nos filtros selecionados para descobrir qual anime será o vencedor. <br><strong>*Torneios disponíveis apenas no site.</strong>",
+                "feature-button": "Adicionar ao seu servidor",
+                "bot-title": "Bot Discord",
+                "bot-content-1": "Adicione <strong>AnimeVault</strong> ao seu servidor clicando no botão abaixo para começar a utilizar o bot.",
+                "bot-content-2": "<small>Leia a <a href='https://github.com/LUFFE154/AnimeVault' target='_blank'>documentação🖇</a> para comprensão dos comandos.</small>",
+                "bot-button": "Adicionar ao seu Servidor",
+                "footer-1": "Desenvolvedores: <a href='https://github.com/LUFFE154' target='_blank'>LUFFE154</a> | <a href='https://github.com/LuizGustavo1001' target='_blank'>LuizGustavo1001</a>"
+            }
+        },
+        {
+            "name": "tournament_setup",
+            "content": {
+                "title-h1": "Modo Torneio <small style='font-size: 0.5em'>(BETA)</small>",
+                "title-p": "Torneio no formato mata-mata com 16 ou 32 animes para coroar o vencedor. <br> Ao retornar para a página inicial o torneio atual será encerrado.",
+                "home-icon": "Página inicial",
+                "lang": "BR",
+                "form-title": "<strong>Preencha os campos abaixo para começar o torneio.</strong>",
+                "form-title-i": "Título: <small>(Máximo 70 caracteres)</small>",
+                "form-amount-i": "Quantidade: ",
+                "form-min-y-i": "Ano mínimo: ",
+                "form-max-y-i": "Ano máximo",
+                "form-min-s-i": "Nota mínima",
+                "form-max-s-i": "Nota máxima",
+                "form-button": "Começar Torneio"
+            
+            }
+        },
+        {
+            "name": "tournament_bracket",
+            "content": {
+                "bracket-title-2": "Oitavas-Final",
+                "bracket-title-3": "Quatas-Final",
+                "bracket-title-4": "Semi-Final",
+                "bracket-title-5": "Final",
+                "bracket-title-6": "Vencedor"
+            }
+        }
+    ]
+}

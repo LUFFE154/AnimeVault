@@ -1,9 +1,9 @@
 // retrieving 4 animes from the current season
-const date = new Date();
 const MAX_AMOUNT = 4;
 
+const date  = new Date();
 const year  = date.getFullYear();
-const month = date.getMonth() + 1;
+const month = date.getMonth() + 1; // 0-11 -> 1-12
 
 var season = "winter";
 if      (month > 3 && month <= 6)   season = "spring";
@@ -16,7 +16,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
     .then(res  => res.json())
     .then(info => {
         // hidden highlight skeleton
-        const highlightSkeleton = document.querySelector(".highlight.skeleton");
+        const highlightSkeleton     = document.querySelector(".highlight.skeleton");
         const highlightSkeletonDots = document.querySelector(".highlight-dots.skeleton");
         highlightSkeleton.classList.add("hidden");
         highlightSkeletonDots.classList.add("hidden");
@@ -50,9 +50,10 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
         var dataId = 1;
 
         animeList.forEach(anime => {
-            const highlightItem = document.createElement("div");
-            highlightItem.classList.add("highlight", "regular");
+            const highlightItem      = document.createElement("div");
             highlightItem.dataset.id = dataId;
+            highlightItem.classList.add("highlight", "regular");
+            
 
             if (dataId != 1) highlightItem.classList.add("hidden");
 
@@ -90,7 +91,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                     <path d="M4.5 4.5a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h8.25a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3H4.5ZM19.94 18.75l-2.69-2.69V7.94l2.69-2.69c.944-.945 2.56-.276 2.56 1.06v11.38c0 1.336-1.616 2.005-2.56 1.06Z" />
                                 </svg>
-                                <strong>Episódios:</strong>
+                                <span data-i18n='highlight-ep'><strong>Episódios:</strong></span>
                             </span>
                             <span class="attribute-content">
                                 ${anime.episodes}
@@ -101,7 +102,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
                                     <path fill-rule="evenodd" d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 0 0 5.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 0 0-2.122-.879H5.25ZM6.375 7.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" clip-rule="evenodd" />
                                 </svg>
-                                <strong>Gêneros:</strong>
+                                <span data-i18n='highlight-gen'><strong>Gêneros:</strong></span>
                             </span>
                             <span class="attribute-content">
                                 ${anime.genre}
@@ -113,7 +114,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
                                     <path d="M12.75 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM7.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM8.25 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM9.75 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM10.5 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12.75 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM14.25 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 17.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 15.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM15 12.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM16.5 13.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
                                     <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6V3a.75.75 0 0 1 .75-.75Zm13.5 9a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5Z" clip-rule="evenodd" />
                                 </svg>
-                                <strong>Temporada:</strong>
+                                <span data-i18n='highlight-se'><strong>Temporada:</strong></span>
                             </span>
                             <span class="attribute-content">
                                 ${seasonText}
@@ -125,7 +126,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
                                     <path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z" clip-rule="evenodd" />
                                     <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
                                 </svg>
-                                <strong>Sinopse:</strong>
+                                <span data-i18n='highlight-sy'><strong>Sinopse:</strong></span>
                             </span>
                             <span class="attribute-content">
                                 <abbr title="${anime.synopsis}">${anime.synopsis}</abbr>
@@ -155,8 +156,8 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
     const highlightDots  = document.querySelectorAll(".highlight-container .highlight-dots .dot");
     const highlightItems = document.querySelectorAll(".highlight-container .highlight.regular");
 
-    const MAX_INDEX = 4;
-     var highlightIndex  = 2; // starts at 2 when slide automatically
+    const MAX_INDEX     = 4;
+    var highlightIndex  = 2; // starts at 2 when slide automatically
 
     highlightDots.forEach(dot => {
         dot.addEventListener("click", () => {
@@ -187,6 +188,7 @@ fetch(`https://api.jikan.moe/v4/seasons/${year}/${season}`)
         highlightItems[index-1].classList.remove("hidden");
         highlightIndex++;
     }
+    // slide animation
     setInterval(() => {slideHighlight(highlightIndex)}, 5000); // 5sec
     });
 

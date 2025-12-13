@@ -1,0 +1,61 @@
+{
+    "pages": [
+        {
+            "name": "index",
+            "content": {
+                "header-nav-1": "Features",
+                "header-nav-2": "Discord Bot",
+                "header-nav-3": "Tournament",
+                "header-nav-4": "Documentation",
+                "lang": "EN",
+                "hero-p": "AnimeVault is a <strong>Discord Bot</strong> to help you search for Anime, Manga, People and Characters alone or with friends.",
+                "hero-button-1": "Add to your server",
+                "hero-button-2": "View Features",
+                "highlight-ep": "<strong>Episodes: </strong>",
+                "highlight-gen": "<strong>Genres: </strong>",
+                "highlight-se": "<strong>Season: </strong>",
+                "highlight-sy": "<strong>Synopsis: </strong>",
+                "features-title": "Features",
+                "features-item-title-1": "Interact directly from Discord",
+                "features-item-title-2": "Recommendations based in filters",
+                "features-item-title-3": "Playoffs Tournament between animes*",
+                "feature-item-content-1": "Make requirements directly from <strong>your Discord server chat</strong> based on <a href='https://jikan.moe' target='_blank'>Jikan API 🖇</a>. <br>Each complete requirement returns <em>title, synopsis, number of episodes, score, rank, images and <a href='https://myanimelist.net' target='_blank'>MAL link🖇</em></a>.",
+                "feature-item-content-2": "Get random recommendations based in filters specified(or not) by the user. <br> Some filters are: <em>genre, min score and max score</em>.",
+                "feature-item-content-3": "Make a 16 or 32 animes playoffs styled tournament to unwrap the winner. <strong>*Tournaments only at the website.</strong>",
+                "feature-button": "Add to your server",
+                "bot-title": "Discord Bot",
+                "bot-content-1": "Add <strong>AnimeVault</strong> at your server clicking on the button down bellow and start to use the bot.",
+                "bot-content-2": "<small>Read the <a href='https://github.com/LUFFE154/AnimeVault' target='_blank'>documentation🖇</a>  to understand better the commands.</small>",
+                "bot-button": "Add to your server",
+                "footer-1": "Developers: <a href='https://github.com/LUFFE154' target='_blank'>LUFFE154</a> | <a href='https://github.com/LuizGustavo1001' target='_blank'>LuizGustavo1001</a>"
+            }
+        },
+        {
+            "name": "tournament_setup",
+            "content": {
+                "title-h1": "Tournament Mode <small style='font-size: 0.5em'>(BETA)</small>",
+                "title-p": " Playoffs styled tournament with 16 or 32 teams to crown the winner. <br>The tournament will be finished when returns to home page.",
+                "home-icon": "Home page",
+                "lang": "EN",
+                "form-title": "<strong>Fill the fields down bellow to start a tournament.</strong>",
+                "form-title-i": "Title: <small>( 70 characters limit)</small>",
+                "form-amount-i": "Amount: ",
+                "form-min-y-i": "Min Year: ",
+                "form-max-y-i": "Max Year: ",
+                "form-min-s-i": "Min score: ",
+                "form-max-s-i": "Max score: ",
+                "form-button": "Start Tournament"
+            }
+        },
+        {
+            "name": "tournament_bracket",
+            "content": {
+                "bracket-title-2": "Round of 16",
+                "bracket-title-3": "Quarter-Finals",
+                "bracket-title-4": "Semi-Finals",
+                "bracket-title-5": "Final",
+                "bracket-title-6": "Winner"
+            }
+        }
+    ]
+}

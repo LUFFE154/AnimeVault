@@ -11,7 +11,7 @@
 
     <title>Tournament Bracket | AnimeVault</title>
 </head>
-<body>
+<body data-page="tournament_bracket">
     <main class="flex-column main">
         <!--
         <div class="bracket-hero teams32">
@@ -175,18 +175,15 @@
 </body>
 </html>
 
-
 <script src="JS/general.js"></script>
 <script src="JS/tournament.js"></script>
 
 <script>
-       
     if(! localStorage.getItem("tournamentData")){
         window.location.href("index.html");
     }else{
         const raw = localStorage.getItem("tournamentData");
         const tournamentData = JSON.parse(raw);
-
 
         (async () => {
             const initAnimeList = await getTournamentAnimes(tournamentData);
@@ -199,9 +196,6 @@
             // tournament winner => console.log(bracket[bracket.length-1].matches[0].winner);
             
         })();
-
-
-
         
         const headerContent = matchHeader("2");
         // insert text at HTML
@@ -212,11 +206,11 @@
             <div class="bracket-hero teams16">
                 <div class="bracket-container">
                     <div class="bracket-title">
-                        <h1>Oitavas-Final</h1>
-                        <h1>Quartas-Final</h1>
-                        <h1>Semi-Final</h1>
-                        <h1>Final</h1>
-                        <h1>Vencedor</h1>
+                        <h1 data-i18n='bracket-title-2'>Oitavas-Final</h1>
+                        <h1 data-i18n='bracket-title-3'>Quartas-Final</h1>
+                        <h1 data-i18n='bracket-title-4'>Semi-Final</h1>
+                        <h1 data-i18n='bracket-title-5'>Final</h1>
+                        <h1 data-i18n='bracket-title-6'>Vencedor</h1>
                     </div>
                     <div class="bracket-col-container"> 
                         <div class="bracket-col playoffs-r2 flex-column">
