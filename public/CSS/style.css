@@ -287,12 +287,12 @@ section.index-hero{
 }
 .highlight-container .highlight-body .attribute{
 	gap: 0.5em;
-	border-left: 1px solid var(--lm-highlight-clr-alt);
+	border-left: 1px solid var(--lm-highlight-clr);
 	padding-left: 0.5em;
 }
 
 .highlight-body .attribute svg{
-	color: var(--lm-highlight-clr-alt);
+	color: var(--lm-highlight-clr);
 }
 .highlight-body .attribute.big{
 	align-items: flex-start;
@@ -533,39 +533,47 @@ section.index-hero{
 
 	margin-bottom: 2em;
 }
+
 #features .box-container .feature{
-	padding: 1em;
-
-	border-radius: var(--border-radius);
-	gap: 1em;
-	box-shadow: 0px 0px 5px var(--lm-shadow-alt-2);
-
-	width: 90%;
-	height: 450px;
-	margin: 0 auto;
-	border: 1px solid var(--lm-highlight-clr);
-
-	line-height: 2em;
+	gap: 0.5em;
 }
-#features .box-container .feature h2{
+#features .feature h2{
+	background: var(--lm-lighter-clr);
+	border-radius: var(--border-radius-alt-3) var(--border-radius-alt-3) 0 0;
+	text-align: center;
+	padding: 0.5em 1em;
+
 	font-family: var(--font-2);
-	font-size: 1.3em;
+	font-weight: normal;
+	font-size: 1.4em;
+
+	min-height: 70px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-bottom: 2px solid var(--lm-highlight-clr);
 }
-#features .box-container .feature a:hover{
-	text-decoration: underline;
+#features .feature p{
+	height: 400px;
+	padding: 1em;
+	font-size: 1.1em;
+	line-height: 2em;
+	border-radius: 0 0 var(--border-radius-alt-3) var(--border-radius-alt-3);
 }
-#features .box-container .feature.feature-1{
+#features .box-container .feature.feature-1 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/discord_s1pbvp.png") bottom right var(--lm-lighter-clr);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-#features .box-container .feature.feature-2{
-	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png") bottom right var(--lm-lighter-clr);
+#features .feature.feature-2 p{
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png") bottom right var(--lm-lighter-clr);;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-#features .box-container .feature.feature-3{
-	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png") bottom right var(--lm-lighter-clr);
+#features .feature.feature-3 p{
+	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png") bottom right var(--lm-lighter-clr);;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -573,7 +581,7 @@ section.index-hero{
 @media(min-width: 768px){
 	#features .box-container .feature{
 		width: 400px;
-		height: 450px;
+		margin: 0 auto;
 	}
 }
 @media(min-width: 1200px){
@@ -587,13 +595,17 @@ section.index-hero{
 	#features .box-container{
 		flex-direction: row;
 	}
+	
 	#features .box-container .feature{
 		width: 350px;
-		height: 400px;
 		
 		cursor: default;
 		transition: var(--transition-time);
 	}
+	#features .box-container .feature h2{
+		font-size: 1.2em;
+	}
+	
 	#features .box-container .feature:hover{
 		transform: scale(0.99);
 	}
@@ -603,9 +615,9 @@ section.index-hero{
 }
 @media(min-width: 1400px){
 	#features .box-container .feature{
-		width: 400px;
-		height: 450px;
+		width: 450px;
 	}
+		
 	#features .default-link-button{
 		width: 30%;
 		margin: 0 auto;
@@ -613,31 +625,24 @@ section.index-hero{
 }
 
 
-.dark-mode #features .box-container .feature{
-	box-shadow: 0px 0px 5px var(--dm-shadow);
-	border-color:var(--dm-highlight-clr);
-	color: var(--dm-text-clr);
+.dark-mode #features .box-container .feature h2{
+	background: var(--dm-darker-clr);
+	border-bottom: 2px solid var(--dm-highlight-clr);
 }
-
-.dark-mode #features .box-container .feature.feature-1{
+.dark-mode #features .box-container .feature.feature-1 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/discord_s1pbvp.png") bottom right var(--dm-darker-clr);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-.dark-mode #features .box-container .feature.feature-2{
+.dark-mode #features .box-container .feature.feature-2 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png") bottom right var(--dm-darker-clr);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-.dark-mode #features .box-container .feature.feature-3{
+.dark-mode #features .box-container .feature.feature-3 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png") bottom right var(--dm-darker-clr);
 	background-size: contain;
 	background-repeat: no-repeat;
-}
-
-.dark-mode #features .box-container .feature{
-	box-shadow: 0px 0px 10px var(--dm-shadow-alt);
-	border-color:var(--dm-highlight-clr);
 }
 /* -=-=-=-=-=-=-=-=- FEATURE END -=-=-=-=-=-=-=-=- */
 
@@ -646,28 +651,31 @@ section.index-hero{
 #discord-bot{
 	gap: 2em;
 }
-#discord-bot div{
+#discord-bot .hero{
 	align-items: center;
 	gap: 3em;
 }
-#discord-bot div img{
+#discord-bot .hero img{
 	width: 100%;
-
-	border: 2px solid var(--lm-highlight-clr);
 	border-radius: var(--border-radius);
-	box-shadow: 0px 0px 5px var(--lm-shadow-alt-2);
 }
-#discord-bot div .container p{
+#discord-bot .hero .container p{
 	font-size: 1.5em;
 	text-align: center;
 }
-#discord-bot div .container small{
+#discord-bot .hero .container small{
 	font-size: 0.7em;
 }
-#discord-bot div .container p a:hover{
+#discord-bot .hero .container p a:hover{
 	text-decoration: underline;
 }
 
+@media(min-width: 768px){
+	#discord-bot .hero{
+		width: 600px;
+		margin: 0 auto;
+	}
+}
 @media(min-width: 1024px){
 	#discord-bot{
 		gap: 3em;
@@ -705,17 +713,14 @@ section.index-hero{
 	}
 }
 
-.dark-mode #discord-bot .hero img{
-	box-shadow: 0px 0px 10px var(--dm-shadow-alt);
-	border-color: var(--dm-highlight-clr);
-}
-.dark-mode .feature.feature-1{
+
+.dark-mode .feature.feature-1 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/discord_s1pbvp.png"), var(--dm-darker-clr);
 }
-.dark-mode .feature.feature-2{
+.dark-mode .feature.feature-2 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258970/rec_t2drmv.png"), var(--dm-darker-clr);
 }
-.dark-mode .feature.feature-3{
+.dark-mode .feature.feature-3 p{
 	background: url("https://res.cloudinary.com/dw2eqq9kk/image/upload/v1764258968/bracket-2_umpukm.png"), var(--dm-darker-clr);
 }
 /* -=-=-=-=-=-=-=-=- DISCORD BOT END -=-=-=-=-=-=-=-=- */

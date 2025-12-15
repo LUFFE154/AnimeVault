@@ -9,7 +9,7 @@
 	--lm-lighter-clr-alt    : #F4E1FD;
 	--lm-darker-clr         : #454545;
 	--lm-highlight-clr      : #934F98;
-	--lm-highlight-clr-alt  : #733D77;
+	--lm-highlight-clr-alt  : #d088d3;
 	--lm-text-clr           : #4a0e41;
 	--lm-text-clr-alt       : #FFFFFF;
 	--lm-linear-gradient	: linear-gradient(to left, transparent 0%, var(--lm-highlight-clr) 50%, transparent 100%);
@@ -24,7 +24,7 @@
 	--dm-lighter-clr        : #DCC1EC;
 	--dm-darker-clr         : #4C3E4B;
 	--dm-darker-clr-alt     : #5c4c5a;
-	--dm-highlight-clr      : #8c45ad;
+	--dm-highlight-clr      : #9e58be;
 	--dm-highlight-clr-alt  : #C588ED;
 	--dm-text-clr           : #FFFFFF;
     --dm-linear-gradient    : linear-gradient(to left, transparent 0%, var(--dm-highlight-clr) 50%, transparent 100%);
@@ -201,7 +201,7 @@ section{
 	cursor: pointer;
 }
 .change-theme svg:hover{
-	transform: translateY(-0.3em);
+	transform: rotate(25deg);
 	color: var(--lm-highlight-clr);
 }
 
@@ -221,7 +221,7 @@ footer{
 
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	
 	justify-content: center;
 	gap: 1em;
 
@@ -235,14 +235,15 @@ footer svg{
 }
 footer .font-awesome-icon{
 	fill: var(--lm-text-clr-alt);
-	width: 20px;
 }
 footer span{
 	display: flex;
 	align-items: center;
 	gap: 0.5em;
 }
-
+footer svg{
+	width: 25px;
+}
 
 @media(min-width: 1024px){
 	.toggle-icons{
@@ -254,6 +255,8 @@ footer span{
 	}
 	footer{
 		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	section{

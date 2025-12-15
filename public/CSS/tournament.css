@@ -84,32 +84,27 @@ main .content .body .default-link-button:hover svg{
 main .content .body .body-form .item{
     gap: 0.3em;
 }
-main .content .body .body-form .item input[type="number"]{
-    width: 100px;
+
+.inputNumber{
+    width: 150px;
     margin-right: 1em;
 }
-main .content .body .body-form .item input[type="number"],
-main .content .body .body-form .item select,
-main .content .body .body-form .item input[type="text"]{
+.regular-input{
     padding: 1em;
 
-    border: 1px solid  transparent;
+    border: 1px solid var(--lm-highlight-clr-alt);
     outline: none;
     border-radius: var(--border-radius);
-    background-color:  var(--lm-bg-clr-1);
+    background-color:  transparent;
     color: var(--lm-text-clr);
     transition: var(--transition-time);
 }
-main .content .body .body-form .item input[type="number"]:hover,
-main .content .body .body-form .item select:hover,
-main .content .body .body-form .item input[type="text"]:hover,
-main .content .body .body-form .item input[type="number"]:focus,
-main .content .body .body-form .item select:focus,
-main .content .body .body-form .item input[type="text"]:focus{
-    background: transparent;
+.regular-input:hover,
+.regular-input:focus{
+    background: var(--lm-bg-clr-1);
     border-color: var(--lm-highlight-clr);
 }
-main .content .body .body-form .item input[type="range"]{
+.range-input{
     width: 100%;
 
     accent-color: var(--lm-highlight-clr-alt);
@@ -187,23 +182,17 @@ main .content .body .body-form .item input[type="range"]{
     color:var(--dm-text-clr);
 }
 
-.dark-mode main .content .body .body-form .item input[type="number"],
-.dark-mode main .content .body .body-form .item select,
-.dark-mode main .content .body .body-form .item input[type="text"]{
-    background-color:  var(--dm-bg-clr-1);
+.dark-mode .regular-input{
+    background-color: transparent;
     color: var(--dm-text-clr);
+    border-color: var(--dm-highlight-clr-alt);
 }
-
-.dark-mode main .content .body .body-form .item input[type="number"]:hover,
-.dark-mode main .content .body .body-form .item select:hover,
-.dark-mode main .content .body .body-form .item input[type="text"]:hover,
-.dark-mode main .content .body .body-form .item input[type="number"]:focus,
-.dark-mode main .content .body .body-form .item select:focus,
-.dark-mode main .content .body .body-form .item input[type="text"]:focus{
+.dark-mode .regular-input:hover,
+.dark-mode .regular-input:focus{
     border-color: var(--dm-highlight-clr);
+    background-color: var(--dm-bg-clr-1);
 }
-
-.dark-mode main .content .body .body-form .item input[type="range"]{
+.dark-mode .range-input{
     accent-color: var(--dm-highlight-clr-alt);
 }
 

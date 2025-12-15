@@ -53,11 +53,11 @@
                 <div class="body-form flex-column">
                     <span class="item flex-column">
                         <label for="ititle" data-i18n="form-title-i">Título: *<small>70 caracteres</small></label>
-                        <input type="text" name="title" id="ititle" maxlength="70" minlength="1" >
+                        <input type="text" name="title" id="ititle" maxlength="70" minlength="1" class="regular-input">
                     </span>
                     <span class="item flex-column">
                         <label for="iamount" data-i18n="form-amount-i">Quantidade: </label>
-                        <select name="amount" id="iamount">
+                        <select name="amount" id="iamount" class="regular-input">
                             <option value="16" selected>16</option>
                             <option value="32">32</option>
                         </select>
@@ -67,16 +67,16 @@
                         <span class="item flex-column">
                             <label for="numberMinYear" data-i18n="form-min-y-i">Ano mínimo:</label>
                             <span class="align-center inputs">
-                                <input type="number" name="minYear" id="numberMinYear" class="inputNumber minInput" min="1960" max="2025" value="2010">
-                                <input type="range" name="minYear" id="rangeMinYear" class="inputRange minRange" min="1960" max="2025" value="2010">
+                                <input type="number" name="minYear" id="numberMinYear" class="inputNumber minInput regular-input" min="1960" max="2025" value="2010">
+                                <input type="range" name="minYear" id="rangeMinYear" class="inputRange minRange range-input" min="1960" max="2025" value="2010">
                             </span>
                         </span>
 
                         <span class="item flex-column">
                             <label for="numberMaxYear" data-i18n="form-max-y-i">Ano máximo: </label>
                             <span class="align-center inputs">
-                                <input type="number" name="maxYear" id="numberMaxYear" class="inputNumber maxInput" min="1960" max="2025" value="2025">
-                                <input type="range" name="maxYear" id="rangeMaxYear" class="inputRange maxRange" min="1960" max="2025" value="2025">
+                                <input type="number" name="maxYear" id="numberMaxYear" class="inputNumber maxInput regular-input" min="1960" max="2025" value="2025">
+                                <input type="range" name="maxYear" id="rangeMaxYear" class="inputRange maxRange range-input" min="1960" max="2025" value="2025">
                             </span>
                         </span>
                     </div>
@@ -85,15 +85,15 @@
                         <span class="item flex-column">
                             <label for="numberMinScore" data-i18n="form-min-s-i">Nota mínima: </label>
                             <span class="align-center inputs">
-                                <input type="number" name="minScore" id="numberMinScore" class="inputNumber minInput" min="1" max="10" step="0.1" value="1">
-                                <input type="range" name="minScore" id="rangeMinScore" class="inputRange minRange" min="1" max="10" step="0.1" value="1">
+                                <input type="number" name="minScore" id="numberMinScore" class="inputNumber minInput regular-input" min="1" max="10" step="0.1" value="1">
+                                <input type="range" name="minScore" id="rangeMinScore" class="inputRange minRange range-input" min="1" max="10" step="0.1" value="1">
                             </span class="align-center">
                         </span>
                         <span class="item flex-column">
                             <label for="numberMaxScore" data-i18n="form-max-s-i">Nota máxima:</label>
                             <span class="align-center inputs">
-                                <input type="number" name="maxScore" id="numberMaxScore" class="inputNumber maxInput" min="1" max="10" step="0.1" value="10">
-                                <input type="range" name="maxScore" id="rangeMaxScore" class="inputRange maxRange" min="1" max="10" step="0.1" value="10">
+                                <input type="number" name="maxScore" id="numberMaxScore" class="inputNumber maxInput regular-input" min="1" max="10" step="0.1" value="10">
+                                <input type="range" name="maxScore" id="rangeMaxScore" class="inputRange maxRange range-input" min="1" max="10" step="0.1" value="10">
                             </span>
                         </span>
                     </div>
